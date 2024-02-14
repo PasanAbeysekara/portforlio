@@ -61,7 +61,7 @@ const Education = () => {
             type="GCE Advanced Level"
             time="2006-2019"
             place="Thurstan College - Colombo 07"
-            info="Completed A/L in physical science stream and achive AAB with 1.9997 Z score in my first attempt"
+            info="Completed A/L in physical science stream and achive AAB with 1.9987 Z score in my first attempt"
           />
 
         </ul>
