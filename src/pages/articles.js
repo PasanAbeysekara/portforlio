@@ -2,14 +2,12 @@ import AnimatedText from "@/components/AnimatedText";
 import { motion, useMotionValue } from "framer-motion";
 import Head from "next/head";
 import Image from "next/image";
-import blog1 from "../../public/images/articles/pagination component in reactjs.jpg";
-import blog2 from "../../public/images/articles/create loading screen in react js.jpg";
-import blog3 from "../../public/images/articles/form validation in reactjs using custom react hook.png";
-import blog4 from "../../public/images/articles/smooth scrolling in reactjs.png";
-import blog5 from "../../public/images/articles/create modal component in react using react portals.png";
-import blog6 from "../../public/images/articles/todo list app built using react redux and framer motion.png";
-import blog7 from "../../public/images/articles/What is Redux with easy explanation.png";
-import blog8 from "../../public/images/articles/What is higher order component in React.jpg";
+import blog1 from "../../public/images/articles/react-component-based-archi-sub.webp";
+import blog2 from "../../public/images/articles/aws-amplify.webp";
+import blog3 from "../../public/images/articles/aws-api-gateway-architecture.webp";
+import blog4 from "../../public/images/articles/react-hooks-guide.webp";
+import blog5 from "../../public/images/articles/redux-guide.webp";
+import blog6 from "../../public/images/articles/aws-lambda-optimization.webp";
 
 import Layout from "@/components/Layout";
 import Link from "next/link";
@@ -138,28 +136,25 @@ export default function Articles() {
       >
         <Layout className="pt-16">
           <AnimatedText
-            text="Words Can Change the World!"
+            text="Some of my Articles!"
             className="!text-8xl !leading-tight mb-16 lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8"
           />
 
           <ul className="grid grid-cols-2 gap-16 lg:gap-8 md:grid-cols-1 md:gap-y-16">
             <FeaturedArticle
               img={blog1}
-              title="build a custom pagination component in reactjs from scratch"
+              title="Building Scalable React Applications: Embracing Component-Based Architecture"
               time="9 min read"
-              summary="Learn how to build a custom pagination component in ReactJS from scratch. Follow this 
-              step-by-step guide to integrate Pagination component in your ReactJS project."
-              link="https://devdreaming.com/blogs/create-pagination-component-reactjs"
+              summary="Building scalable React applications requires embracing a component-based architecture, which enables developers to create complex web applications by assembling small, modular components. Each component acts as an independent, reusable UI element, managing its own state and rendering, thus facilitating scalability, maintainability, and performance in web application development"
+              link="https://pasan-bytes-blog.vercel.app/blogs/scalable-react-component-architecture"
             />
 
             <FeaturedArticle
               img={blog2}
-              title="creating stunning loading screens in react: Build 3 types of loading screens"
+              title="AWS Amplify: Accelerating The Development Of Full-Stack Applications"
               time="10 min read"
-              summary="Learn how to create stunning loading screens in React with 3 different methods. 
-              Discover how to use React-Loading, React-Lottie & build a custom loading screen. Improve the 
-              user experience."
-              link="https://devdreaming.com/blogs/create-3-different-types-of-loading-screens-in-react"
+              summary="AWS Amplify accelerates the development of full-stack applications by providing a comprehensive toolkit for developers to easily integrate cloud services with their applications. It simplifies the process of setting up, testing, launching, and scaling applications, allowing developers to focus more on building their applications rather than managing backend services."
+              link="https://pasan-bytes-blog.vercel.app/blogs/aws-amplify-full-stack-developmen"
             />
           </ul>
 
@@ -169,40 +164,28 @@ export default function Articles() {
 
           <ul className="flex flex-col items-center relative">
             <Article
-              title="form validation in reactjs: build a reusable custom hook for inputs and error handling"
+              title="AWS API Gateway: Paving The Way For Scalable And Secure APIs"
               img={blog3}
-              date="January 27, 2023"
-              link="https://devdreaming.com/blogs/react-form-validation-custom-hook"
+              date="January 27, 2024"
+              link="https://pasan-bytes-blog.vercel.app/blogs/aws-api-gateway-scalable-secure-apis"
             />
             <Article
-              title="silky smooth scrolling in reactjs: a step-by-step guide for react developers"
+              title="Leveraging React Hooks For Stateful Logic: An In-Depth Guide"
               img={blog4}
-              date="January 30, 2023"
-              link="https://devdreaming.com/blogs/smooth-scrolling-in-react-js"
+              date="January 30, 2024"
+              link="https://pasan-bytes-blog.vercel.app/blogs/react-hooks-stateful-logic-guid"
             />
             <Article
-              title="creating an efficient modal component in react using hooks and portals"
+              title="Mastering Redux: A Comprehensive Guide For State Management"
               img={blog5}
-              date="January 29, 2023"
-              link="https://devdreaming.com/blogs/create-efficient-modal-react-portals"
+              date="January 29, 2024"
+              link="https://pasan-bytes-blog.vercel.app/blogs/redux-state-management-comprehensive-guide"
             />
             <Article
-              title="build a fabulous todo list app with react, redux and framer-motion"
+              title="Optimizing Serverless Applications With AWS Lambda: Strategies For Efficiency And Scalability"
               img={blog6}
-              date="January 28, 2023"
-              link="https://devdreaming.com/blogs/build-react-redux-framer-motion-todo-app"
-            />
-            <Article
-              title="redux simplified: a beginner's guide for web developers"
-              img={blog7}
-              date="January 31, 2023"
-              link="https://devdreaming.com/blogs/redux-simply-explained"
-            />
-            <Article
-              title="what is higher order component (hoc) in react?"
-              date="January 4, 2023"
-              img={blog8}
-              link="https://devdreaming.com/blogs/higher-order-component-hoc-react"
+              date="January 28, 2024"
+              link="https://pasan-bytes-blog.vercel.app/blogs/serverless-aws-lambda-optimization-strategies"
             />
           </ul>
         </Layout>
