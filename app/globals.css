@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@keyframes trail {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(0.5); opacity: 0; }
+}
+
+.smooth-transition {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+.hover-scale {
+  @apply transform transition-transform duration-300 hover:scale-105;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.icon-style {
+  filter: brightness(0) invert(1); /* Converts the SVG to white */
+}
+
+.icon-style:hover {
+  filter: brightness(0.8); /* Slightly darkens on hover */
+}
