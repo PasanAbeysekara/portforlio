@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import TransitionLink from './TransitionLink';
 import { MapPin, Link as LinkIcon, Linkedin } from 'lucide-react';
 import { yourName, yourUsername, yourBio, yourLocation, yourBlogUrl, yourLinkedInUrl, yourLinkedInHandle } from '../data/projects';
 
@@ -21,9 +22,9 @@ export default function ProfileSidebar() {
                 <h1 className="text-2xl font-bold">{yourName}</h1>
                 <p className="text-xl text-gh-text-secondary font-light">{yourUsername}</p>
             </div>
-            <Link href={yourLinkedInUrl} target="_blank" className="w-full text-center bg-gh-button hover:bg-gh-button-hover border border-gh-border rounded-md py-1.5 transition-colors">
+            <TransitionLink href={yourLinkedInUrl} className="w-full text-center bg-gh-button hover:bg-gh-button-hover border border-gh-border rounded-md py-1.5 transition-colors">
                 Follow
-            </Link>
+            </TransitionLink>
             <p className="text-base">{yourBio}</p>
             <ul className="space-y-2 text-sm text-gh-text-secondary">
                 <li className="flex items-center gap-2">

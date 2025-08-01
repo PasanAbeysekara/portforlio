@@ -1,5 +1,6 @@
 "use client"; // For using next/navigation's usePathname
 import Link from 'next/link';
+import TransitionLink from './TransitionLink'; 
 import { Github, Menu, X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
@@ -22,9 +23,9 @@ export default function Header() {
                 <div className="flex items-center justify-between h-16">
                     {/* Left side */}
                     <div className="flex items-center space-x-4">
-                        <Link href="/" className="text-white hover:text-gh-text-secondary transition-colors">
+                        <TransitionLink href="/" className="text-white hover:text-gh-text-secondary transition-colors"> {/* <-- Use TransitionLink */}
                             <Github size={32} />
-                        </Link>
+                        </TransitionLink>
                         <div className="hidden md:flex items-center bg-gh-bg border border-gh-border rounded-md px-3 py-1.5 w-72">
                             <span className="text-gh-text-secondary text-sm">Search or jump to...</span>
                         </div>
@@ -33,7 +34,7 @@ export default function Header() {
                     {/* Desktop Navigation */}
                     <nav className="hidden md:flex items-center space-x-2">
                         {navLinks.map((link) => (
-                            <Link
+                            <TransitionLink 
                                 key={link.name}
                                 href={link.href}
                                 className={clsx(
@@ -44,7 +45,7 @@ export default function Header() {
                                 )}
                             >
                                 {link.name}
-                            </Link>
+                            </TransitionLink>
                         ))}
                     </nav>
 
@@ -62,7 +63,7 @@ export default function Header() {
                 <div className="md:hidden">
                     <nav className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                         {navLinks.map((link) => (
-                            <Link
+                            <TransitionLink
                                 key={link.name}
                                 href={link.href}
                                 onClick={() => setIsMenuOpen(false)}
@@ -74,7 +75,7 @@ export default function Header() {
                                 )}
                             >
                                 {link.name}
-                            </Link>
+                            </TransitionLink>
                         ))}
                     </nav>
                 </div>
