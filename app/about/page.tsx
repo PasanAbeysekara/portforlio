@@ -5,18 +5,25 @@ export const metadata = { title: `About - ${yourName}` };
 export default function AboutPage() {
   return (
     <div className="max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold border-b border-gh-border pb-4 mb-6">About Me</h1>
+      <h1 className="text-3xl font-bold border-b border-gh-border pb-4 mb-6">Profile</h1>
       <div className="prose prose-invert lg:prose-xl text-gh-text space-y-4">
-        {/* CUSTOMIZE: Your about me content */}
         <p>
-          I am a passionate software engineer with a knack for building elegant and efficient solutions. My journey into tech started with a fascination for how things work, which quickly evolved into a love for coding and problem-solving.
+          Motivated Software Engineer and Open Source Contributor with hands-on
+          experience in backend development and DevOps. During my WSO2 internship, I
+          contributed to developing robust backend services and microservices.
         </p>
         <p>
-          Over the years, I've honed my skills in both front-end and back-end development, working with a diverse range of technologies including Python (Django, Flask), JavaScript (React, Next.js, Node.js), and various database systems. I'm a firm believer in clean code, robust architecture, and continuous learning.
+          I am skilled in Java Spring Boot, Go, and building RESTful APIs in cloud-native
+          environments. I have also achieved recognition at the country level for my
+          proficiency in Data Analytics, UI/UX Designing & Competitive Programming.
         </p>
-        <p>
-          When I'm not coding, you can find me exploring hiking trails, contributing to open-source projects, or diving into a good sci-fi novel.
-        </p>
+        
+        <h2 className="text-2xl font-semibold pt-4">Key Skills</h2>
+        <ul className="list-disc pl-6">
+            <li><strong>Programming & Scripting:</strong> Java (experienced), Go (exploring), TypeScript (experienced), Ballerina (certified), C++ (competitive programming)</li>
+            <li><strong>Software Development:</strong> Backend (Spring Boot, Microservices - REST, Kafka/MQTT), Frontend (React, Next.js), Mobile (Flutter), DBMS (MySQL, PostgreSQL, MongoDB, Redis)</li>
+            <li><strong>DevOps:</strong> Linux, CI/CD (Jenkins), Docker, Kubernetes, SonarQube, AWS (S3, EC2, Lambda, CloudFront)</li>
+        </ul>
       </div>
     </div>
   );
