@@ -1,6 +1,3 @@
-// CUSTOMIZE: This is your single source of truth for project data.
-// Add your own projects here. The slug should be unique.
-
 export interface Project {
   slug: string;
   name: string;
