@@ -1,6 +1,7 @@
 "use client";
 import { Project } from '../data/projects';
 import Link from 'next/link';
+import TransitionLink from './TransitionLink';
 import { Book, Star, GitFork } from 'lucide-react';
 import { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
@@ -30,7 +31,7 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
     <div ref={containerRef} className="grid grid-cols-1 lg:grid-cols-2 gap-4">
       {projects.slice(0, 4).map((project) => ( // Show only first 4 projects
         <div key={project.slug} className="project-card">
-            <Link href={`/projects/${project.slug}`} className="block h-full">
+            <TransitionLink href={`/projects/${project.slug}`} className="block h-full">
                 <div className="border border-gh-border hover:border-gh-border-active rounded-lg p-4 flex flex-col h-full transition-colors">
                     <h3 className="flex items-center gap-2 font-semibold text-gh-link">
                         <Book size={16} /> {project.name}
@@ -50,7 +51,7 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
                         </div>
                     </div>
                 </div>
-            </Link>
+            </TransitionLink>
         </div>
       ))}
     </div>
