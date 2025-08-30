@@ -1,15 +1,19 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import TransitionLink from './TransitionLink';
 import { MapPin, Link as LinkIcon, Linkedin } from 'lucide-react';
 import { yourName, yourUsername, yourBio, yourLocation, yourBlogUrl, yourLinkedInUrl, yourLinkedInHandle } from '../data/projects';
+import ProfileStats from './ProfileStats';
+import { GithubProfileData } from '../lib/types';
 
-export default function ProfileSidebar() {
+interface ProfileSidebarProps {
+  stats: GithubProfileData['user'];
+}
+
+export default function ProfileSidebar({ stats }: ProfileSidebarProps) {
     return (
         <div className="flex flex-col gap-4">
             <div className="relative w-3/4 sm:w-1/2 md:w-full mx-auto md:mx-0">
                 <Image
-                    // CUSTOMIZE: replace with your photo in /public
                     src="/profile-photo.jpg" 
                     alt={yourName}
                     width={296}
@@ -22,9 +26,9 @@ export default function ProfileSidebar() {
                 <h1 className="text-2xl font-bold">{yourName}</h1>
                 <p className="text-xl text-gh-text-secondary font-light">{yourUsername}</p>
             </div>
-            <TransitionLink href={yourLinkedInUrl} className="w-full text-center bg-gh-button hover:bg-gh-button-hover border border-gh-border rounded-md py-1.5 transition-colors">
+            <Link href={yourLinkedInUrl} target="_blank" className="w-full text-center bg-gh-button hover:bg-gh-button-hover border border-gh-border rounded-md py-1.5 transition-colors">
                 Follow
-            </TransitionLink>
+            </Link>
             <p className="text-base">{yourBio}</p>
             <ul className="space-y-2 text-sm text-gh-text-secondary">
                 <li className="flex items-center gap-2">
@@ -37,6 +41,8 @@ export default function ProfileSidebar() {
                     <Linkedin size={16} /> <a href={yourLinkedInUrl} target="_blank" className="text-gh-link hover:underline">{yourLinkedInHandle}</a>
                 </li>
             </ul>
+            
+            <ProfileStats stats={stats} />
         </div>
     );
 }

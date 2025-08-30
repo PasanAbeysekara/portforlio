@@ -21,11 +21,20 @@ const config: Config = {
         'gh-button': '#21262d',
         'gh-button-hover': '#30363d',
         'gh-blue-tag': 'rgba(88, 166, 255, 0.15)',
+        
+        // OLD CONTRIBUTION COLORS (can be removed or kept for reference)
         'gh-contrib-0': '#161b22',
         'gh-contrib-1': '#0e4429',
         'gh-contrib-2': '#006d32',
         'gh-contrib-3': '#26a641',
         'gh-contrib-4': '#39d353',
+
+        // NEW: Light-themed contribution colors to match the image
+        'gh-contrib-light-0': '#ebedf0', // For the light-themed graph
+        'gh-contrib-light-1': '#9be9a8',
+        'gh-contrib-light-2': '#40c463',
+        'gh-contrib-light-3': '#30a14e',
+        'gh-contrib-light-4': '#216e39',
       },
       fontFamily: {
         sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif'],
