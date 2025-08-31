@@ -1,6 +1,5 @@
 "use client";
 import { Project } from '../data/projects';
-import Link from 'next/link';
 import TransitionLink from './TransitionLink';
 import { Book, Star, GitFork } from 'lucide-react';
 import { useLayoutEffect, useRef } from 'react';

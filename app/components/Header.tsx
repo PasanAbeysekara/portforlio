@@ -1,19 +1,30 @@
-"use client"; // For using next/navigation's usePathname
-import Link from 'next/link';
+"use client";
 import TransitionLink from './TransitionLink'; 
 import { Github, Menu, X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 import { useState } from 'react';
+// NEW: Import the command palette and types
+import { CommandPalette } from './CommandPalette';
+import { PostData } from '../lib/posts';
+import { Project } from '../data/projects';
 
+// The navLinks remain the same, but you can remove 'Blog' if it feels redundant with the search
 const navLinks = [
     { name: 'Projects', href: '/' },
     { name: 'Experience', href: '/experience' },
     { name: 'About Me', href: '/about' },
+    { name: 'Blog', href: '/blog'},
     { name: 'Contact', href: '/contact' },
 ];
 
-export default function Header() {
+// NEW: Define props for the Header
+interface HeaderProps {
+    posts: PostData[];
+    projects: Project[];
+}
+
+export default function Header({ posts, projects }: HeaderProps) {
     const pathname = usePathname();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -21,20 +32,20 @@ export default function Header() {
         <header className="bg-gh-bg-secondary border-b border-gh-border sticky top-0 z-50">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
-                    {/* Left side */}
                     <div className="flex items-center space-x-4">
-                        <TransitionLink href="/" className="text-white hover:text-gh-text-secondary transition-colors"> {/* <-- Use TransitionLink */}
+                        <TransitionLink href="/" className="text-white hover:text-gh-text-secondary transition-colors">
                             <Github size={32} />
                         </TransitionLink>
-                        <div className="hidden md:flex items-center bg-gh-bg border border-gh-border rounded-md px-3 py-1.5 w-72">
-                            <span className="text-gh-text-secondary text-sm">Search or jump to...</span>
+                        {/* REPLACED: The old static search bar is now the command palette */}
+                        <div className="hidden md:block">
+                            <CommandPalette posts={posts} projects={projects} />
                         </div>
                     </div>
 
                     {/* Desktop Navigation */}
                     <nav className="hidden md:flex items-center space-x-2">
                         {navLinks.map((link) => (
-                            <TransitionLink 
+                            <TransitionLink
                                 key={link.name}
                                 href={link.href}
                                 className={clsx(
@@ -49,8 +60,9 @@ export default function Header() {
                         ))}
                     </nav>
 
-                    {/* Mobile Menu Button */}
-                    <div className="md:hidden">
+                    {/* Mobile Menu Button & Search */}
+                    <div className="md:hidden flex items-center gap-4">
+                        <CommandPalette posts={posts} projects={projects} />
                         <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-gh-text-secondary hover:text-white">
                             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
                         </button>
@@ -69,9 +81,7 @@ export default function Header() {
                                 onClick={() => setIsMenuOpen(false)}
                                 className={clsx(
                                     'block px-3 py-2 rounded-md text-base font-medium transition-colors',
-                                    (pathname === link.href || (link.href === '/' && pathname.startsWith('/projects')))
-                                        ? 'text-white bg-gh-button-hover'
-                                        : 'text-gh-text-secondary hover:text-white hover:bg-gh-button'
+                                    pathname === link.href ? 'text-white bg-gh-button-hover' : 'text-gh-text-secondary hover:text-white hover:bg-gh-button'
                                 )}
                             >
                                 {link.name}
