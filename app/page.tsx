@@ -88,6 +88,7 @@ async function getGithubProfileData(): Promise<GithubProfileData['user']> {
     if (user && user.contributionsCollection) {
       const orgMap = new Map<string, Organization>();
       
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       user.contributionsCollection.pullRequestContributionsByRepository.forEach((contrib: any) => {
         const owner = contrib.repository.owner;
         if (owner.__typename === 'Organization' && !orgMap.has(owner.login)) {

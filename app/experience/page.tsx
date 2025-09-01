@@ -114,7 +114,7 @@ export default function ExperiencePage() {
         />
 
         <div className="space-y-14 md:space-y-16">
-          {experiences.map((exp, idx) => (
+          {experiences.map((exp) => (
             <motion.article
               key={exp.company + exp.role}
               className="relative pl-14"
