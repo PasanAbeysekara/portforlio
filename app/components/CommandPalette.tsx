@@ -8,7 +8,6 @@ import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, Command
 import { PostData } from "@/app/lib/posts";
 import { Project, yourUsername } from "@/app/data/projects";
 import { FileText, Newspaper, Home, User, Briefcase, Mail, Github } from 'lucide-react';
-import { cn } from "@/lib/utils";
 
 interface CommandPaletteProps {
   posts: PostData[];

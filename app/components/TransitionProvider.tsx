@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useState, useContext, ReactNode, useRef, useEffect } from "react";
+import { createContext, useContext, ReactNode, useRef, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import gsap from "gsap";
 import { Github } from "lucide-react";
