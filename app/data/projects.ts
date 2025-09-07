@@ -94,3 +94,4 @@ export const yourLocation = 'Colombo, Sri Lanka'; // Inferred from DineFy projec
 export const yourBlogUrl = 'https://pasankavi.medium.com/'; // Update with your blog/website
 export const yourLinkedInHandle = '/in/pasan-kavinda-abeysekara/'; // Update with your LinkedIn
 export const yourLinkedInUrl = `https://linkedin.com${yourLinkedInHandle}`;
+export const yourGithubUrl = "https://github.com/pasanAbeysekara"
