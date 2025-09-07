@@ -25,7 +25,7 @@ export default function RootLayout({
   const allProjects = projects;
 
   return (
-    <html lang="en">
+    <html lang="en" data-arp="">
       <body className={inter.className}>
         <TransitionProvider>
           <div className="min-h-screen flex flex-col">
