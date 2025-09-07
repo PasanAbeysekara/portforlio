@@ -47,7 +47,6 @@ export const projects: Project[] = [
   challengesPath: '/readmes/collaborative-editor-challenges.md',
     },
   },
-  // ... other projects remain the same ...
   {
     slug: 'dinefy-restaurant-reservation',
     name: 'DineFy - Online Restaurant Table Reservation System',

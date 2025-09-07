@@ -98,7 +98,8 @@ export default function ProjectClientContent({ project }: ProjectClientContentPr
     return (
       <div className="markdown-content p-6">
         <ReactMarkdown>{content}</ReactMarkdown>
-    </div>);
+      </div>
+    );
   };
 
   return (
