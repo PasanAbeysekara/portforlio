@@ -8,10 +8,13 @@ export interface Project {
   demoUrl: string;
   repoUrl:string;
   content: {
-    readme: string;
+  readme: string;
+  readmePath?: string;
     demo: string;
-    architecture: string;
-    challenges: string;
+  architecture: string;
+  architecturePath?: string;
+  challenges: string;
+  challengesPath?: string;
   };
 }
 
@@ -25,28 +28,23 @@ export const projects: Project[] = [
     demoUrl: '#',
     repoUrl: 'https://github.com/PasanAbeysekara/collaborative-editor',
     content: {
-      readme: `
-# Cloud-Native Real-time Collaborative Editor
-This project provides a powerful, real-time collaborative editing experience, similar to Google Docs, built on a robust cloud-native backend.
-## Key Features
-*   **Real-time Engine**: Utilizes an operation-based synchronization model to ensure all users see a consistent state.
-*   **Versioned Concurrency Control**: Manages simultaneous edits from multiple users effectively.
-*   **Secure Authentication**: Implements JWT for secure authentication and ACL-based sharing.
-*   **Hybrid Persistence**: Leverages Redis for high-speed caching and PostgreSQL for durable storage.
-*   **Observability**: Integrated with the Prometheus/Grafana/Loki stack for comprehensive monitoring.
-`,
-      demo: '<img src="https://via.placeholder.com/600x400.gif?text=Real-time+Editor+Demo" alt="Collaborative Editor Demo">',
-      architecture: `
-## Architecture Overview
-The system is designed as a **cloud-native microservice architecture** orchestrated by Kubernetes. It features decoupled services exposed via a central API Gateway.
-`,
-      challenges: `
-## Challenges & Solutions
-*   **Challenge**: Ensuring data consistency and low latency with multiple concurrent users.
-    *   **Solution**: Implemented an operation-based synchronization algorithm over WebSockets.
-*   **Challenge**: Balancing performance with data durability.
-    *   **Solution**: Adopted a hybrid persistence model using both Redis and PostgreSQL.
-`,
+      readme: '',
+      readmePath: '/readmes/collaborative-editor.md',
+      demo: `
+        <div class="video-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+          <iframe
+            src="https://www.youtube.com/embed/9TVaHHAmx1Q?si=vOuRd4WjoRUvha41"
+            title="Collaborative Editor Demo"
+            style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      `,
+  architecture: '',
+  architecturePath: '/readmes/collaborative-editor-architecture.md',
+  challenges: '',
+  challengesPath: '/readmes/collaborative-editor-challenges.md',
     },
   },
   // ... other projects remain the same ...
