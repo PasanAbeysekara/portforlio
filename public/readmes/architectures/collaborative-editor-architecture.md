@@ -5,7 +5,6 @@
 This document provides a detailed overview of the technical architecture for the Cloud-Native Collaborative Editor backend. The system is designed as a distributed set of microservices, adhering to cloud-native principles to achieve scalability, resilience, and maintainability. The entire application is containerized with Docker and orchestrated with Kubernetes.
 
 ![Architecture Diagram](https://github.com/user-attachments/assets/6fb5b86f-3364-4eee-93bc-2f2a6e760415)
-<!-- *Figure : High-Level System Architecture and CI/CD Flow.* -->
 
 ## Core Concepts
 

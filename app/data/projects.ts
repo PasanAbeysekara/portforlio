@@ -5,16 +5,12 @@ export interface Project {
   name: string;
   description: string;
   tags: string[];
-  demoUrl: string;
   repoUrl:string;
   content: {
-  readme: string;
-  readmePath?: string;
+    readmePath?: string;
     demo: string;
-  architecture: string;
-  architecturePath?: string;
-  challenges: string;
-  challengesPath?: string;
+    architecturePath?: string;
+    challengesPath?: string;
   };
 }
 
@@ -25,11 +21,9 @@ export const projects: Project[] = [
     name: 'Cloud-Native Real-time Collaborative Editor',
     description: 'A real-time text editor with operation-based synchronization, versioned concurrency control, and a decoupled microservice architecture.',
     tags: ['Go', 'WebSockets', 'PostgreSQL', 'Redis', 'Docker', 'Kubernetes', 'gRPC'],
-    demoUrl: '#',
     repoUrl: 'https://github.com/PasanAbeysekara/collaborative-editor',
     content: {
-      readme: '',
-      readmePath: '/readmes/collaborative-editor.md',
+      readmePath: '/readmes/readmes/collaborative-editor.md',
       demo: `
         <div class="video-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
           <iframe
@@ -41,10 +35,8 @@ export const projects: Project[] = [
           ></iframe>
         </div>
       `,
-  architecture: '',
-  architecturePath: '/readmes/collaborative-editor-architecture.md',
-  challenges: '',
-  challengesPath: '/readmes/collaborative-editor-challenges.md',
+      architecturePath: '/readmes/architectures/collaborative-editor-architecture.md',
+      challengesPath: '/readmes/challenges/collaborative-editor-challenges.md',
     },
   },
   {
@@ -52,10 +44,22 @@ export const projects: Project[] = [
     name: 'DineFy - Online Restaurant Table Reservation System',
     description: 'A full-stack group project for STRATEC PARTNERS, featuring a Java backend, an Angular frontend, and a generative AI chat assistant.',
     tags: ['Java', 'Spring Boot', 'Angular 17', 'PostgreSQL', 'JPA', 'AWS RDS', 'JUnit'],
-    demoUrl: '#',
     repoUrl: 'https://github.com/PasanAbeysekara/dinefy-frontend',
     content: {
-      readme: `...`, demo: `...`, architecture: `...`, challenges: `...`
+      readmePath: '/readmes/readmes/dinefy.md', 
+      demo: `
+        <div class="video-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+          <iframe
+            src="https://www.youtube.com/embed/-oF4a-rKVJk?si=21mqj6hiTOZxvRqb"
+            title="Dinefy Reservation System Demo"
+            style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      `, 
+      architecturePath: '/readmes/architectures/dinefy-architecture.md', 
+      challengesPath: '/readmes/challenges/dinefy-challenges.md'
     },
   },
   {
@@ -63,10 +67,12 @@ export const projects: Project[] = [
     name: 'Memorandum of Understanding Management System - UOJ',
     description: 'A full-stack application for managing MoUs, featuring submission workflows, approvals, location mapping, and real-time updates.',
     tags: ['Next.js', 'TypeScript', 'NextAuth.js', 'Prisma', 'MySQL', 'Aiven.io'],
-    demoUrl: '#',
     repoUrl: 'https://github.com/PasanAbeysekara/mou-management-system',
     content: {
-        readme: `...`, demo: `...`, architecture: `...`, challenges: `...`
+        readmePath: `/readmes/readmes/collaborative-editor.md`, 
+        demo: `
+      `, 
+        architecturePath: `...`, challengesPath: `...`
     },
   },
   {
@@ -74,10 +80,20 @@ export const projects: Project[] = [
     name: 'AR VISIONARY EXPLORA - Furniture E-Commerce App',
     description: 'A Flutter-based mobile application that uses ARCore to allow users to virtually preview furniture in their own space before buying.',
     tags: ['Flutter', 'ARCore', 'Firebase'],
-    demoUrl: '#',
     repoUrl: 'https://github.com/PasanAbeysekara/AR-VisionaryExplora',
     content: {
-        readme: `...`, demo: `...`, architecture: `...`, challenges: `...`
+        readmePath: `/readmes/readmes/collaborative-editor.md`, 
+        demo: `
+          <div class="video-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+            <iframe
+              src="https://www.youtube.com/embed/MbuzirsrJ4k?si=BvxnOCjbSJzfNEq2"
+              title="AR visonary explora Demo"
+              style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>`, 
+        architecturePath: `...`, challengesPath: `...`
     },
   },
 ];

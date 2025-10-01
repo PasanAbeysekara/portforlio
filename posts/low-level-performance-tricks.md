@@ -270,7 +270,7 @@ This lets Java call Go functions directly for performance-critical networking.
 
 ---
 
-## Conclusion
+## So Summary is ...
 
 Low-level performance tricks are not everyday tools, but in the right context they are transformative:
 

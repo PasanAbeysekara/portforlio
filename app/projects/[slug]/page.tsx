@@ -28,12 +28,12 @@ export default async function ProjectPage({ params }: Props) {
         </h2>
         <p className="text-sm text-gh-text-secondary">{project.description}</p>
         <div className="flex items-center gap-2 mt-4">
-          <TransitionLink
+          {/* <TransitionLink
             href={project.demoUrl}
             className="flex items-center gap-1 bg-gh-button hover:bg-gh-button-hover border border-gh-border rounded-md px-3 py-1 text-sm transition-colors"
           >
             <Star size={16} /> Live Demo
-          </TransitionLink>
+          </TransitionLink> */}
           <TransitionLink
             href={project.repoUrl}
             className="flex items-center gap-1 bg-gh-button hover:bg-gh-button-hover border border-gh-border rounded-md px-3 py-1 text-sm transition-colors"
