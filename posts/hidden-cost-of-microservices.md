@@ -1,6 +1,6 @@
 ---
 title: 'Hidden Costs of Microservices'
-date: '2025-08-31'
+date: '2025-08-16'
 summary: 'A deep dive into the overlooked trade-offs of adopting microservices architecture—covering operational complexity, latency, debugging, costs, and when to avoid microservices altogether.'
 image: '/images/blog/hidden-costs-microservices.png'
 categories: ['Software Architecture', 'Microservices', 'Scalability', 'DevOps']

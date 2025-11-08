@@ -1,6 +1,6 @@
 ---
 title: 'Profiling Mysteries: Debugging Memory Leaks, Deadlocks, and GC Pauses in Production'
-date: '2025-08-31'
+date: '2025-07-11'
 summary: 'A deep-dive into real-world profiling case studies—hunting down subtle memory leaks, deadlocks, and garbage collector pauses in production systems using practical tools and detective-style debugging.'
 image: '/images/blog/profiling-mysteries.png'
 categories: ['Performance Engineering', 'Debugging', 'Production Systems', 'Software Architecture']

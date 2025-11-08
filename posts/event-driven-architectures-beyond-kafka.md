@@ -1,6 +1,6 @@
 ---
 title: 'Event-Driven Architectures Beyond Kafka'
-date: '2025-08-31'
+date: '2025-09-10'
 summary: 'Exploring alternatives to Apache Kafka for event-driven systems, including NATS, Apache Pulsar, and custom lightweight brokers—highlighting real-world performance, trade-offs, and use cases.'
 image: '/images/blog/event-driven-architectures.png'
 categories: ['Software Architecture', 'Event-Driven Systems', 'Messaging', 'Distributed Systems']

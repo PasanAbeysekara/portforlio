@@ -1,6 +1,6 @@
 ---
 title: 'Low-Level Performance Tricks: Cache Alignment, SIMD, and Hot-Path Optimization with Rust and Go'
-date: '2025-08-31'
+date: '2025-07-31'
 summary: 'A deep dive into systems-level performance engineering tricks: from cache alignment and SIMD acceleration to embedding Rust/Go in Python and Java for hot paths.'
 image: '/images/blog/low-level-performance-tricks.png'
 categories: ['Performance Engineering', 'Systems Programming', 'Rust', 'Go', 'Python', 'Java']

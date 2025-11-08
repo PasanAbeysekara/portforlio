@@ -69,20 +69,9 @@ export default function ProjectClientContent({ project }: ProjectClientContentPr
     }
 
     if (activeTab === 'readme' || activeTab === 'architecture' || activeTab === 'challenges') {
-      const getLocalContent = (tab: Tab): string | undefined => {
-        if (tab === 'readme') return project.content.readme;
-        if (tab === 'architecture') return project.content.architecture;
-        if (tab === 'challenges') return project.content.challenges;
-        return undefined;
-      };
-
-      const local = getLocalContent(activeTab)?.trim();
-      if (local) return (
-        <div className="markdown-content p-6">
-          <ReactMarkdown>{local}</ReactMarkdown>
-        </div>
-      );
-
+      // We load content from the provided paths (e.g. readmePath, architecturePath, challengesPath).
+      // The project data does not include inline `readme`/`architecture`/`challenges` fields,
+      // so prefer fetched content and show appropriate UI states.
       if (loadingContent) return <div className="p-6">Loading...</div>;
       if (contentError) return <div className="p-6">{contentError}</div>;
       if (fetchedContent) return (
@@ -94,12 +83,8 @@ export default function ProjectClientContent({ project }: ProjectClientContentPr
       return <div className="p-6">No content available.</div>;
     }
 
-    const content = project.content[activeTab];
-    return (
-      <div className="markdown-content p-6">
-        <ReactMarkdown>{content}</ReactMarkdown>
-      </div>
-    );
+    // Other tabs are handled above (demo). If we ever reach here, show a fallback.
+    return <div className="p-6">No content available.</div>;
   };
 
   return (

@@ -1,6 +1,6 @@
 ---
 title: 'When to Not Use Kubernetes'
-date: '2025-08-31'
+date: '2025-10-26'
 summary: 'Kubernetes has become the default choice for container orchestration, but it is not always the right fit. This article explores scenarios where Kubernetes introduces unnecessary complexity, hidden costs, and operational burden—and what alternatives may be better.'
 image: '/images/blog/when-not-to-use-kubernetes.png'
 categories: ['DevOps', 'Cloud Native', 'Software Architecture', 'Infrastructure']
