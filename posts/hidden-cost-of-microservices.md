@@ -1,14 +1,14 @@
 ---
 title: 'Hidden Costs of Microservices'
 date: '2025-08-16'
-summary: 'A deep dive into the overlooked trade-offs of adopting microservices architecture—covering operational complexity, latency, debugging, costs, and when to avoid microservices altogether.'
+summary: 'A deep dive into the overlooked trade-offs of adopting microservices architecture covering operational complexity, latency, debugging, costs, and when to avoid microservices altogether.'
 image: '/images/blog/hidden-costs-microservices.png'
 categories: ['Software Architecture', 'Microservices', 'Scalability', 'DevOps']
 ---
 
 Microservices have become one of the most popular architectural styles in modern software engineering. The industry praises them for enabling independent scaling, rapid iteration, and fault isolation. When companies like Netflix, Amazon, and Uber advocate for microservices, it is tempting to assume that this model is the default path to scalability and resilience.
 
-However, the reality is much more nuanced. Microservices come with **hidden costs**—in operations, performance, debugging, team structure, and even your cloud bill. While they solve specific problems of large-scale engineering organizations, they also introduce a new set of challenges that many teams underestimate.
+However, the reality is much more nuanced. Microservices come with **hidden costs** in operations, performance, debugging, team structure, and even your cloud bill. While they solve specific problems of large-scale engineering organizations, they also introduce a new set of challenges that many teams underestimate.
 
 This article takes a comprehensive look at the hidden costs of microservices. It does not argue against them entirely but aims to shed light on the less glamorous aspects that architects, engineers, and decision-makers must evaluate before diving in.
 
@@ -60,7 +60,7 @@ This introduces several operational burdens:
 2. **Configuration Management**: Each service may have different configurations per environment. (Spring Cloud Config, Vault).
 3. **Resilience Patterns**: Circuit breakers, retries, and rate-limiting become mandatory.
 4. **Security and Authentication**: Every inter-service call requires secure communication, usually with OAuth, mTLS, or JWT tokens.
-5. **Deployment Automation**: Manual deployment is infeasible—pipelines, orchestration, and blue-green deployments become the norm.
+5. **Deployment Automation**: Manual deployment is infeasible pipelines, orchestration, and blue-green deployments become the norm.
 
 Suddenly, the team must also be experts in **orchestration, service mesh, and cloud infrastructure**, not just application code.
 
@@ -203,7 +203,7 @@ Testing also becomes harder. Unit tests alone are insufficient. Teams need:
 * Integration tests across multiple services.
 * Staging environments that replicate production scale.
 
-Without discipline, microservices devolve into **distributed monoliths**—a system that combines the worst of both worlds.
+Without discipline, microservices devolve into **distributed monoliths** a system that combines the worst of both worlds.
 
 ---
 
@@ -248,7 +248,7 @@ If microservices are unavoidable, follow these guidelines:
    Tools like Istio or Linkerd provide observability and traffic control but come with their own complexity tax.
 
 ----
-## So Summary is ...
+## Long story short ...
 
 Microservices promise scalability, flexibility, and resilience but these benefits are not free. They bring hidden costs in complexity, latency, debugging, cloud bills, and required expertise.
 

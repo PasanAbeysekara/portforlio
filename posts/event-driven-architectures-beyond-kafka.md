@@ -1,7 +1,7 @@
 ---
 title: 'Event-Driven Architectures Beyond Kafka'
 date: '2025-09-10'
-summary: 'Exploring alternatives to Apache Kafka for event-driven systems, including NATS, Apache Pulsar, and custom lightweight brokers—highlighting real-world performance, trade-offs, and use cases.'
+summary: 'Exploring alternatives to Apache Kafka for event-driven systems, including NATS, Apache Pulsar, and custom lightweight brokers highlighting real-world performance, trade-offs, and use cases.'
 image: '/images/blog/event-driven-architectures.png'
 categories: ['Software Architecture', 'Event-Driven Systems', 'Messaging', 'Distributed Systems']
 ---
@@ -10,7 +10,7 @@ Event-driven architecture (EDA) has become the backbone of modern distributed sy
 
 While Kafka is powerful, it is not a silver bullet. Its strong durability and replayability come at the cost of operational complexity and resource consumption. For some use cases, Kafka is overkill. For others, its design may not align with real-world constraints.
 
-This article explores **event-driven architectures beyond Kafka**—with a focus on **NATS**, **Apache Pulsar**, and **custom lightweight brokers**—and compares them with real-world performance benchmarks.
+This article explores **event-driven architectures beyond Kafka** with a focus on **NATS**, **Apache Pulsar**, and **custom lightweight brokers** and compares them with real-world performance benchmarks.
 
 ---
 

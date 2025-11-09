@@ -270,7 +270,7 @@ This lets Java call Go functions directly for performance-critical networking.
 
 ---
 
-## So Summary is ...
+## So to put it simply ...
 
 Low-level performance tricks are not everyday tools, but in the right context they are transformative:
 
@@ -280,6 +280,6 @@ Low-level performance tricks are not everyday tools, but in the right context th
 
 Modern engineering is about using the right level of abstraction. Sometimes, that means Kubernetes and serverless. Other times, it means padding structs, vectorizing loops, and hand-tuning hot paths.
 
-The best engineers move seamlessly across these levels—knowing when to reach for low-level optimizations that make the difference between “fast enough” and “world-class.”
+The best engineers move seamlessly across these levels knowing when to reach for low-level optimizations that make the difference between “fast enough” and “world-class.”
 
 ---

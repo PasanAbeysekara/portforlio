@@ -1,7 +1,7 @@
 ---
 title: 'Profiling Mysteries: Debugging Memory Leaks, Deadlocks, and GC Pauses in Production'
-date: '2025-07-11'
-summary: 'A deep-dive into real-world profiling case studies—hunting down subtle memory leaks, deadlocks, and garbage collector pauses in production systems using practical tools and detective-style debugging.'
+date: '2025-10-10'
+summary: 'A deep-dive into real-world profiling case studies hunting down subtle memory leaks, deadlocks, and garbage collector pauses in production systems using practical tools and detective-style debugging.'
 image: '/images/blog/profiling-mysteries.png'
 categories: ['Performance Engineering', 'Debugging', 'Production Systems', 'Software Architecture']
 ---
@@ -273,12 +273,12 @@ function createHandler(timeout) {
 
 ---
 
-## So Summary is ...
+## So the gist is ...
 
 Profiling mysteries are engineering detective stories. They test your ability to reason about concurrency, memory, and runtime behavior under pressure.
 
 Whether it is a **memory leak that takes weeks to appear**, a **deadlock triggered under rare conditions**, or a **garbage collector pause that breaks SLAs**, these issues demand **tools, patience, and methodical investigation**.
 
-The good news: with modern profilers, heap dumps, and flame graphs, engineers have powerful lenses into production systems. The best teams don’t just react to performance issues—they continuously monitor, profile, and tune their systems to stay ahead.
+The good news: with modern profilers, heap dumps, and flame graphs, engineers have powerful lenses into production systems. The best teams don’t just react to performance issues they continuously monitor, profile, and tune their systems to stay ahead.
 
 ---

@@ -1,14 +1,14 @@
 ---
 title: 'When to Not Use Kubernetes'
 date: '2025-10-26'
-summary: 'Kubernetes has become the default choice for container orchestration, but it is not always the right fit. This article explores scenarios where Kubernetes introduces unnecessary complexity, hidden costs, and operational burden—and what alternatives may be better.'
+summary: 'Kubernetes has become the default choice for container orchestration, but it is not always the right fit. This article explores scenarios where Kubernetes introduces unnecessary complexity, hidden costs, and operational burden and what alternatives may be better.'
 image: '/images/blog/when-not-to-use-kubernetes.png'
 categories: ['DevOps', 'Cloud Native', 'Software Architecture', 'Infrastructure']
 ---
 
 Kubernetes has become synonymous with container orchestration. It powers deployments at Google, Shopify, Airbnb, and thousands of enterprises. Its ecosystem of operators, service meshes, and monitoring tools has grown into a vast cloud-native landscape.
 
-But Kubernetes is **not free**—in either cost or complexity. It can be the right choice at hyperscale, but for many teams, Kubernetes introduces overhead that outweighs its benefits. In some cases, it slows delivery, increases bills, and adds operational risk.
+But Kubernetes is **not free** in either cost or complexity. It can be the right choice at hyperscale, but for many teams, Kubernetes introduces overhead that outweighs its benefits. In some cases, it slows delivery, increases bills, and adds operational risk.
 
 This article explores **when not to use Kubernetes**, backed by practical scenarios, trade-offs, and alternatives.
 
@@ -109,7 +109,7 @@ Kubernetes is not trivial:
 * Debugging requires `kubectl` fluency and knowledge of pod lifecycle, service discovery, and networking.
 * Misconfigurations are common: open dashboards, mis-set resource limits, insecure RBAC policies.
 
-Without a dedicated DevOps/SRE team, adopting Kubernetes leads to a **DevOps tax**—slowing down delivery and increasing cognitive load.
+Without a dedicated DevOps/SRE team, adopting Kubernetes leads to a **DevOps tax** slowing down delivery and increasing cognitive load.
 
 ![Kubernetes Learning Curve](/images/blog/k8s-learning-curve.png)
 
@@ -164,7 +164,7 @@ Kubernetes was designed for **multi-tenant clusters**, but configuring security 
 * **Pod security policies** are often skipped, leading to privilege escalation.
 * **Secrets** stored in Kubernetes are base64-encoded, not encrypted by default.
 
-Enterprises often need **service meshes (Istio, Linkerd)**, secret managers (Vault), and strict network policies—each adding more complexity.
+Enterprises often need **service meshes (Istio, Linkerd)**, secret managers (Vault), and strict network policies each adding more complexity.
 
 ---
 
@@ -254,7 +254,7 @@ Otherwise, simpler options may be more efficient.
 
 ---
 
-## So Summary is .....
+## So the takeaway is .....
 
 Kubernetes is powerful but not always necessary. It introduces hidden costs in complexity, bills, debugging, and skill requirements. For startups and small teams, it can be a **distraction from building product value**.
 
@@ -264,7 +264,7 @@ The best engineers know when to **say no to Kubernetes**:
 * If you are event-driven, consider serverless.
 * If you are containerized but small-scale, try ECS/Fargate or Cloud Run.
 
-Adopt Kubernetes only when the benefits outweigh the complexity. The right infrastructure is not the most popular—it is the one that fits your problem.
+Adopt Kubernetes only when the benefits outweigh the complexity. The right infrastructure is not the most popular it is the one that fits your problem.
 
 ---
 
