@@ -1,6 +1,6 @@
 "use client";
 import TransitionLink from './TransitionLink'; 
-import { Github, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 import { useState } from 'react';
@@ -8,6 +8,7 @@ import { useState } from 'react';
 import { CommandPalette } from './CommandPalette';
 import { PostData } from '../lib/posts';
 import { Project } from '../data/projects';
+import CustomLogo from './CustomLogo';
 
 // The navLinks remain the same, but you can remove 'Blog' if it feels redundant with the search
 const navLinks = [
@@ -32,17 +33,15 @@ export default function Header({ posts, projects }: HeaderProps) {
         <header className="bg-gh-bg-secondary border-b border-gh-border sticky top-0 z-50">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
-                    <div className="flex items-center space-x-4">
-                        <TransitionLink href="/" className="text-white hover:text-gh-text-secondary transition-colors">
-                            <Github size={32} />
-                        </TransitionLink>
-                        {/* REPLACED: The old static search bar is now the command palette */}
-                        <div className="hidden md:block">
-                            <CommandPalette posts={posts} projects={projects} />
-                        </div>
+                <div className="flex items-center space-x-4">
+                    <TransitionLink href="/" className="text-white hover:text-gh-text-secondary transition-colors">
+                        <CustomLogo size={32} />
+                    </TransitionLink>
+                    {/* REPLACED: The old static search bar is now the command palette */}
+                    <div className="hidden md:block">
+                        <CommandPalette posts={posts} projects={projects} />
                     </div>
-
-                    {/* Desktop Navigation */}
+                </div>                    {/* Desktop Navigation */}
                     <nav className="hidden md:flex items-center space-x-2">
                         {navLinks.map((link) => (
                             <TransitionLink

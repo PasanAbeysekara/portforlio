@@ -3,7 +3,7 @@
 import { createContext, useContext, ReactNode, useRef, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import gsap from "gsap";
-import { Github } from "lucide-react";
+import CustomLogo from "./CustomLogo";
 
 const TransitionContext = createContext<{
   handleTransition: (href: string) => void;
@@ -65,7 +65,7 @@ export const TransitionProvider = ({ children }: { children: ReactNode }) => {
           ref={logoRef}
           className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[101] text-white opacity-0 pointer-events-none"
       >
-          <Github size={64} />
+          <CustomLogo size={64} />
       </div>
       {children}
     </TransitionContext.Provider>

@@ -3,6 +3,8 @@ import ProfileSidebar from './components/ProfileSidebar';
 import FeaturedProjects from './components/FeaturedProjects';
 import ContributionGraph from './components/ContributionGraph';
 import { projects } from './data/projects';
+import TransitionLink from './components/TransitionLink';
+import { ArrowRight } from 'lucide-react';
 
 async function getGithubProfileData(): Promise<GithubProfileData['user']> {
   const GITHUB_USERNAME = process.env.GITHUB_USERNAME;
@@ -119,7 +121,18 @@ export default async function HomePage() {
         <ProfileSidebar stats={githubData} />
       </aside>
       <div className="w-full md:w-3/4">
-        <h2 className="text-xl font-semibold mb-4">Featured Projects</h2>
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-xl font-semibold">Featured Projects</h2>
+          {projects.length > 3 && (
+            <TransitionLink 
+              href="/projects" 
+              className="inline-flex items-center gap-2 bg-gh-button hover:bg-gh-button-hover border border-gh-border rounded-md px-4 py-2 transition-colors text-sm font-medium"
+            >
+              See More Projects
+              <ArrowRight size={16} />
+            </TransitionLink>
+          )}
+        </div>
         <FeaturedProjects projects={projects} />
         <div className="mt-8">
             <h2 className="text-xl font-semibold mb-4">Activity Overview</h2>

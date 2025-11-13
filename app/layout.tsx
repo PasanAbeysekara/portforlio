@@ -6,13 +6,29 @@ import Header from './components/Header'
 import { getSortedPostsData } from './lib/posts'
 import { projects } from './data/projects'
 import { TransitionProvider } from './components/TransitionProvider'
+import CookieConsent from './components/CookieConsent'
 
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://pasanabeysekara.vercel.app'),
   title: 'Pasan Abeysekara | Software Engineer',
   description: 'Personal portfolio of Pasan Abeysekara, a software engineer.',
+  icons: {
+    icon: '/profile-photo.jpg',
+    apple: '/profile-photo.jpg',
+  },
+  openGraph: {
+    title: 'Pasan Abeysekara | Software Engineer',
+    description: 'Full-Stack Developer | DevOps Enthusiast | Scalable Systems Advocate',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pasan Abeysekara | Software Engineer',
+    description: 'Full-Stack Developer | DevOps Enthusiast | Scalable Systems Advocate',
+  },
 }
 
 export default function RootLayout({
@@ -35,6 +51,7 @@ export default function RootLayout({
               {children}
             </main>
           </div>
+          <CookieConsent />
         </TransitionProvider>
       </body>
     </html>
