@@ -54,8 +54,12 @@ export default function CookieConsent() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end justify-center p-4 pointer-events-none">
-      <div className="pointer-events-auto bg-gh-bg-secondary border border-gh-border rounded-lg shadow-2xl max-w-2xl w-full p-6">
+    <>
+      {/* Backdrop overlay to dim background and prevent interactions */}
+      <div className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm" />
+      
+      <div className="fixed inset-0 z-50 flex items-end justify-center p-4 pointer-events-none">
+        <div className="pointer-events-auto bg-gh-bg-secondary border border-gh-border rounded-lg shadow-2xl max-w-2xl w-full p-6">
         <div className="flex items-start justify-between mb-4">
           <div className="flex items-center gap-2 text-2xl">
             <span>🍪</span>
@@ -163,7 +167,8 @@ export default function CookieConsent() {
             </div>
           </>
         )}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
