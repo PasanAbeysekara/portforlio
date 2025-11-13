@@ -12,7 +12,7 @@ import CookieConsent from './components/CookieConsent'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://pasanabeysekara.vercel.app'),
+  metadataBase: new URL('https://pasana.site'),
   title: 'Pasan Abeysekara | Software Engineer',
   description: 'Personal portfolio of Pasan Abeysekara, a software engineer.',
   icons: {
