@@ -2,7 +2,7 @@
 
 This document describes the system architecture spanning **Frontend (Angular)** and **Backend (Spring Boot)**, the core domain model, cross-cutting concerns, and deployment patterns observed in the repositories.
 
-> Sources: Frontend repo (Angular + Tailwind, Cucumber E2E, S3/CloudFront/Netlify mentioned) and Backend repo (Spring Boot, MySQL, JWT, HATEOAS, Docker, GitHub Actions). :contentReference[oaicite:12]{index=12}
+> Sources: Frontend repo (Angular + Tailwind, Cucumber E2E, S3/CloudFront/Netlify mentioned) and Backend repo (Spring Boot, MySQL, JWT, HATEOAS, Docker, GitHub Actions).
 
 ---
 
@@ -14,14 +14,14 @@ This document describes the system architecture spanning **Frontend (Angular)** 
 - **Backend** exposes RESTful APIs with HATEOAS links; manages business rules, persistence, and background tasks (scheduled / async).
 - **MySQL** stores all persistent domain entities (organizations, properties/restaurants, locations/states, menus/choices, reservations, orders, promotions, contracts, availability, system config).
 
-(Entities & features taken from backend README.) :contentReference[oaicite:13]{index=13}
+(Entities & features taken from backend README.)
 
 ---
 
 ## 2. Frontend Architecture (Angular)
 
 **Key Pieces (repo evidence)**  
-- Angular project with `tailwind.config.js`, `e2e` folder (Cucumber), standard Angular CLI config files. :contentReference[oaicite:14]{index=14}
+- Angular project with `tailwind.config.js`, `e2e` folder (Cucumber), standard Angular CLI config files.
 
 **Recommended layering (matches Angular best practices)**
 - **Core Module**: Auth service (login/refresh/JWT storage), HTTP interceptors (Authorization header, error handling), guards (AuthGuard).
@@ -38,17 +38,17 @@ This document describes the system architecture spanning **Frontend (Angular)** 
 - **Routing**: Lazy-loaded feature modules; role-protected routes via guards.
 
 **E2E Testing**
-- Cucumber feature specs + step definitions targeting critical user journeys (login, search, reserve, cancel). :contentReference[oaicite:15]{index=15}
+- Cucumber feature specs + step definitions targeting critical user journeys (login, search, reserve, cancel).
 
 **Deployment**
-- **S3 + CloudFront** or **Netlify**, as noted in the frontend README. :contentReference[oaicite:16]{index=16}
+- **S3 + CloudFront** or **Netlify**, as noted in the frontend README.
 
 ---
 
 ## 3. Backend Architecture (Spring Boot)
 
 **Tech & Concerns**
-- Spring MVC (controllers), Spring Security (JWT), Spring Data JPA (repositories), Spring HATEOAS (linking), Log4j2, schedulers/async, Docker packaging, GitHub Actions CI/CD. :contentReference[oaicite:17]{index=17}
+- Spring MVC (controllers), Spring Security (JWT), Spring Data JPA (repositories), Spring HATEOAS (linking), Log4j2, schedulers/async, Docker packaging, GitHub Actions CI/CD.
 
 **Suggested Package Layout**
 ```
@@ -78,7 +78,7 @@ com.dinefy
 - **Availability** (real-time/batch computed)
 - **System Config** (tags, facilities, event types, seat types)
 
-(Entities/features per backend README.) :contentReference[oaicite:18]{index=18}
+(Entities/features per backend README.)
 
 **Key Flows**
 - **Authentication**: `/auth/login` → JWT issued → client adds `Authorization: Bearer <token>` to subsequent API calls.
@@ -89,7 +89,7 @@ com.dinefy
 - **Orders**: Create and update order linked to reservation/property/menu.
 - **Promotions**: Eligibility checks applied during reservation/order flow.
 
-(Flow responsibilities reflect backend README’s features including availability management & scheduling.) :contentReference[oaicite:19]{index=19}
+(Flow responsibilities reflect backend README’s features including availability management & scheduling.)
 
 **Cross-Cutting**
 - **Validation**: Bean Validation (JSR 380) on DTOs.
@@ -99,7 +99,7 @@ com.dinefy
 - **i18n**: `messages_*.properties`.
 
 **Data**
-- MySQL schema managed via JPA/Hibernate; `/database` folder in repo for DB assets. :contentReference[oaicite:20]{index=20}
+- MySQL schema managed via JPA/Hibernate; `/database` folder in repo for DB assets.
 
 ---
 
@@ -117,7 +117,7 @@ com.dinefy
 - `/availability`  
 - `/system-config/{tags, facilities, event-types, seat-types}`
 
-(High-level resource list drawn from backend README’s feature list; exact paths may vary.) :contentReference[oaicite:21]{index=21}
+(High-level resource list drawn from backend README’s feature list; exact paths may vary.)
 
 ---
 
@@ -125,15 +125,14 @@ com.dinefy
 
 - **Async**: Executor(s) for non-blocking tasks (e.g., availability recompute, property updates).  
 - **Scheduled**: Periodic jobs (e.g., event/availability updates, cleanup).  
-(Explicitly called out in the backend README.) :contentReference[oaicite:22]{index=22}
+(Explicitly called out in the backend README.)
 
 ---
 
 ## 6. CI/CD & Containerization
 
-- **Backend**: Docker image via `Dockerfile`; **GitHub Actions** pipelines in `.github/workflows`. Deploy to your runtime (EC2/ECS/K8s). :contentReference[oaicite:23]{index=23}
-- **Frontend**: Build artifacts deployed to **S3+CloudFront** or **Netlify** (per README visuals). :contentReference[oaicite:24]{index=24}
-
+- **Backend**: Docker image via `Dockerfile`; **GitHub Actions** pipelines in `.github/workflows`. Deploy to your runtime (EC2/ECS/K8s).
+- **Frontend**: Build artifacts deployed to **S3+CloudFront** or **Netlify** (per README visuals).
 ---
 
 ## 7. Environment Configuration
