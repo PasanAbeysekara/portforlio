@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   title: 'Pasan Abeysekara | Software Engineer',
   description: 'Personal portfolio of Pasan Abeysekara, a software engineer.',
   icons: {
-    icon: '/profile-photo.jpg',
-    apple: '/profile-photo.jpg',
+    icon: '/logo-pasan.png',
+    apple: '/logo-pasan.png',
   },
   openGraph: {
     title: 'Pasan Abeysekara | Software Engineer',

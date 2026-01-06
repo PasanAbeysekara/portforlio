@@ -55,11 +55,13 @@ export const TransitionProvider = ({ children }: { children: ReactNode }) => {
     <TransitionContext.Provider value={{ handleTransition }}>
       <div 
         ref={slideInRef}
-        className="fixed top-0 left-0 w-full h-screen bg-gh-bg z-[100] transform -translate-y-full"
+        className="fixed inset-0 w-full h-full bg-gh-bg z-[100]"
+        style={{ transform: 'translateY(-100%)' }}
       />
       <div 
         ref={slideOutRef}
-        className="fixed top-0 left-0 w-full h-screen bg-gh-green z-[99] transform -translate-y-full"
+        className="fixed inset-0 w-full h-full bg-gh-bg z-[99]"
+        style={{ transform: 'translateY(-100%)' }}
       />
       <div
           ref={logoRef}

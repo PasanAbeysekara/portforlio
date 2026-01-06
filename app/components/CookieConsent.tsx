@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 
 export default function CookieConsent() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState<boolean | null>(null);
   const [showCustomize, setShowCustomize] = useState(false);
   const [preferences, setPreferences] = useState({
     necessary: true,
@@ -14,9 +14,7 @@ export default function CookieConsent() {
 
   useEffect(() => {
     const consent = localStorage.getItem('cookieConsent');
-    if (!consent) {
-      setIsVisible(true);
-    }
+    setIsVisible(!consent);
   }, []);
 
   const handleAcceptAll = () => {
@@ -51,15 +49,24 @@ export default function CookieConsent() {
     setShowCustomize(false);
   };
 
+  // Don't render anything until we've checked localStorage
+  if (isVisible === null) return null;
+  
   if (!isVisible) return null;
 
   return (
     <>
       {/* Backdrop overlay to dim background and prevent interactions */}
-      <div className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm" />
+      <div 
+        className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"
+        style={{ transition: 'none' }}
+      />
       
       <div className="fixed inset-0 z-50 flex items-end justify-center p-4 pointer-events-none">
-        <div className="pointer-events-auto bg-gh-bg-secondary border border-gh-border rounded-lg shadow-2xl max-w-2xl w-full p-6">
+        <div 
+          className="pointer-events-auto bg-gh-bg-secondary border border-gh-border rounded-lg shadow-2xl max-w-2xl w-full p-6"
+          style={{ transition: 'none' }}
+        >
         <div className="flex items-start justify-between mb-4">
           <div className="flex items-center gap-2 text-2xl">
             <span>🍪</span>
