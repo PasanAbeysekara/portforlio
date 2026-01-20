@@ -1,4 +1,4 @@
-# AR-Visionary Explora - Development Challenges
+# Development Challenges
 
 ## Overview
 This document outlines the technical challenges, constraints, and solutions encountered during the development of the AR-Visionary Explora application. It serves as a reference for understanding design decisions and potential areas for improvement.

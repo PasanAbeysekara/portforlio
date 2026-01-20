@@ -1,4 +1,4 @@
-# AR-Visionary Explora - System Architecture
+# System Architecture
 
 ## Overview
 AR-Visionary Explora is a cross-platform mobile application built with Flutter that leverages augmented reality technology to revolutionize the furniture e-commerce experience. The application allows users to visualize furniture items in their real-world environment before making purchase decisions.

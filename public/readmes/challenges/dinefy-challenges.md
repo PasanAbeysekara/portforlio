@@ -1,4 +1,4 @@
-# DineFy – Engineering Challenges & Decisions
+# Engineering Challenges & Decisions
 
 This doc captures key trade-offs, risks, and “why” behind the current design, with actionable improvements.
 

@@ -1,4 +1,4 @@
-# Architecture Documentation
+# System Architecture
 
 ## Overview
 

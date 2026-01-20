@@ -1,4 +1,4 @@
-# DineFy Architecture
+# System Architecture
 
 This document describes the system architecture spanning **Frontend (Angular)** and **Backend (Spring Boot)**, the core domain model, cross-cutting concerns, and deployment patterns observed in the repositories.
 
