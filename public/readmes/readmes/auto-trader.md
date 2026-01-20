@@ -3,7 +3,6 @@
 A sophisticated autonomous cryptocurrency trading bot with multi-user support, real-time analytics, and comprehensive trade tracking. Built with Python, React, TypeScript, and WebSocket for real-time communication.
 
 ![Auto Trader Bot Demo](https://raw.githubusercontent.com/MoonCraze/auto-trader/main/bot-ui-ts/public/demo.png)
-
 ---
 
 ## 📋 Table of Contents
@@ -31,180 +30,249 @@ A sophisticated autonomous cryptocurrency trading bot with multi-user support, r
 
 ## ✨ Features
 
-### **Authentication System**
-- Synthetic wallet generation with random SOL balance (10-20 SOL)
-- Secure login/registration flow
-- Session persistence
-- Multi-user support with isolated trading sessions
+### 🔐 Authentication System
+- **Synthetic Wallet Generation**: Random SOL balance (10-20 SOL) assigned per user
+- **Secure Login/Registration**: Session-based authentication flow
+- **Session Persistence**: Automatic re-login on page refresh
+- **Multi-User Support**: Isolated trading sessions per wallet
 
-### **Trading Dashboard**
-- Real-time candlestick charts with strategy overlays
-- Live trade execution and monitoring
-- Portfolio tracking with P&L calculations
-- Market transaction feed
-- Bot trade history
-- Strategy parameter visualization (stop-loss, take-profit tiers)
+### 📊 Trading Dashboard
+- **Real-Time Charts**: Candlestick charts with strategy overlays powered by TradingView
+- **Live Monitoring**: Real-time trade execution and position tracking
+- **Portfolio Tracking**: Live P&L calculations and balance updates
+- **Transaction Feed**: Market-wide transaction activity display
+- **Trade History**: Complete bot trade log with status indicators
+- **Strategy Visualization**: Visual representation of stop-loss and take-profit levels
 
-### **Profile/Wallet Page**
-Comprehensive analytics dashboard with three sections:
+### 👤 Profile/Wallet Page
+Comprehensive analytics dashboard with three interactive tabs:
 
-#### **Overview**
-- Total P&L and win rate
-- Trading volume and trade count
-- Average trade size and P&L per trade
-- Largest win/loss statistics
-- Unique tokens traded
+#### Overview Tab
+- Total P&L (Profit & Loss)
+- Win rate with wins/losses breakdown
+- Total trade count (active + finished)
+- Trading volume and average trade size
+- Average P&L per trade
+- Largest win and largest loss
+- Unique tokens traded count
 
-#### **Per-Token Statistics**
+#### Per-Token Statistics Tab
 - Win rate per token
-- Total invested and returned amounts
+- Total SOL invested and returned
 - Net P&L per token
 - Average P&L percentage
-- Best and worst trades
+- Best and worst trade identification
 
-#### **Trade History**
-- Complete trade log with entry/exit details
+#### Trade History Tab
+- Complete trade log with pagination
+- Entry and exit price details
 - P&L calculations in SOL and percentage
-- Trade status and exit reasons
+- Trade status indicators (active/finished/failed)
+- Exit reasons (stop-loss, take-profit, trailing stop)
 - Timestamp tracking
 
-### 🔄 **Real-Time Features**
-- WebSocket-based live updates
-- Per-user state management
-- Shared token signals with independent execution
-- Automatic sentiment analysis
-- Dynamic strategy adjustments
+### 🔄 Real-Time Features
+- **WebSocket Communication**: Instant bidirectional updates
+- **Per-User State Management**: Isolated state for concurrent users
+- **Shared Signal Processing**: Token signals distributed to all users
+- **Independent Execution**: Each user's trades execute independently
+- **Automatic Sentiment Analysis**: Pre-trade token sentiment validation
+- **Dynamic Strategy**: Breakeven and trailing stop-loss adjustments
 
-### **Data Persistence**
-- SQLite database with comprehensive schema
-- Historical trade tracking
-- Portfolio snapshots
-- Position management
+### 💾 Data Persistence
+- **SQLite Database**: Production-ready schema with migrations support
+- **Complete Trade History**: Entry/exit tracking with P&L calculations
+- **Position Management**: Real-time open positions per user
+- **Portfolio Snapshots**: Historical portfolio value tracking
 
-## Architecture
+---
 
-### **Backend (Python)**
-- `websocket_server.py` - Multi-user WebSocket server with per-user state
-- `api_server.py` - FastAPI REST API for analytics and historical data
-- `database.py` - SQLAlchemy models (Users, Trades, Positions, Snapshots)
-- `auth.py` - Synthetic wallet generation and authentication
-- `portfolio_manager.py` - User-specific portfolio management with DB persistence
-- `execution_engine.py` - Trade execution with database logging
-- `strategy_engine.py` - Trading strategy implementation
-- `sentiment_analyzer.py` - Token sentiment analysis
+## 🏗️ Architecture
 
-### **Frontend (React + TypeScript)**
-- `App.tsx` - Main application with routing and navigation
-- `WalletContext.tsx` - Authentication context provider
-- `Login.tsx` - Login/registration UI
-- `ProfilePage.tsx` - Analytics and trade history dashboard
-- `CandlestickChart.tsx` - Real-time trading charts
-- `TradeSummaryPanel.tsx` - Trade queue visualization
+The system follows a modern full-stack architecture with clear separation of concerns. See [Architecture.md](Architecture.md) for detailed documentation.
 
-## Quick Start
+### Backend Components (Python)
+
+| Component | File | Purpose |
+|-----------|------|----------|
+| **WebSocket Server** | `websocket_server.py` | Multi-user real-time communication hub with per-user state isolation |
+| **REST API** | `api_server.py` | FastAPI server for analytics, trade history, and user management |
+| **Database Models** | `database.py` | SQLAlchemy ORM models (Users, Trades, Positions, Snapshots) |
+| **Authentication** | `auth.py` | Synthetic wallet generation and user authentication |
+| **Portfolio Manager** | `portfolio_manager.py` | User-specific balance tracking and position management with DB persistence |
+| **Execution Engine** | `execution_engine.py` | Trade execution simulator with database logging |
+| **Strategy Engine** | `strategy_engine.py` | Trading strategy with dynamic stop-loss and tiered take-profit |
+| **Sentiment Analyzer** | `sentiment_analyzer.py` | Token sentiment scoring via external API |
+| **Entry Strategy** | `entry_strategy.py` | Technical analysis for entry signal confirmation |
+| **Data Feeder** | `data_feeder.py` | Market data ingestion and streaming |
+
+### Frontend Components (React + TypeScript)
+
+| Component | File | Purpose |
+|-----------|------|----------|
+| **App Root** | `App.tsx` | Main application with routing, navigation, and WebSocket management |
+| **Wallet Context** | `WalletContext.tsx` | Authentication state and WebSocket connection provider |
+| **Login** | `Login.tsx` | User authentication UI (login/registration) |
+| **Profile Page** | `ProfilePage.tsx` | Analytics dashboard with overview, per-token stats, and trade history |
+| **Candlestick Chart** | `CandlestickChart.tsx` | Real-time TradingView charts with strategy overlays |
+| **Trade Summary Panel** | `TradeSummaryPanel.tsx` | Trade queue and status visualization |
+| **Transaction Feed** | `TransactionFeed.tsx` | Live market transaction display |
+| **Info Panel** | `InfoPanel.tsx` | Portfolio and strategy information display |
+
+---
+
+## 🚀 Quick Start
 
 ### Prerequisites
-- Python 3.8+
-- Node.js 16+
-- npm or yarn
+
+Ensure you have the following installed:
+
+- **Python 3.8+** (Python 3.10+ recommended)
+- **Node.js 16+** (Node.js 18+ recommended)
+- **npm** or **yarn** package manager
+- **Git** for cloning the repository
 
 ### Installation
 
-1. **Clone the repository**
+#### 1. Clone the Repository
 ```bash
-git clone <repository-url>
+git clone https://github.com/MoonCraze/auto-trader.git
 cd auto-trader
 ```
 
-2. **Install Python dependencies**
+#### 2. Install Python Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-3. **Initialize database**
+#### 3. Initialize Database
+Create the database and populate with demo users:
 ```bash
 python database.py
-python test_setup.py  # Creates demo users
+python test_setup.py  # Creates 3 demo users
 ```
 
-4. **Install frontend dependencies**
+#### 4. Install Frontend Dependencies
 ```bash
 cd bot-ui-ts
 npm install
+cd ..
 ```
 
 ### Running the Application
 
-**Option 1: Use Quick Start Script (Windows)**
+#### Option 1: Quick Start Script (Windows)
+For Windows users, use the provided batch script:
 ```bash
 quick_start.bat
 ```
 
-**Option 2: Manual Start**
+#### Option 2: Manual Start (Cross-Platform)
+Open **three separate terminals** and run:
 
-Open 3 terminals:
-
+**Terminal 1 - WebSocket Server** (Port 8765)
 ```bash
-# Terminal 1 - WebSocket Server
 python websocket_server.py
+```
 
-# Terminal 2 - API Server
+**Terminal 2 - REST API Server** (Port 8000)
+```bash
 python api_server.py
+```
 
-# Terminal 3 - Frontend
+**Terminal 3 - Frontend Dev Server** (Port 5173)
+```bash
 cd bot-ui-ts
 npm run dev
 ```
 
-Open http://localhost:5173 in your browser.
+#### 5. Access the Application
+Open your browser and navigate to:
+```
+http://localhost:5173
+```
+
+You should see the login page. Use any of the demo wallet addresses to log in.
+
+---
 
 ## 🎮 Demo Accounts
 
-Three demo accounts are pre-created:
+Three demo accounts are pre-created with `test_setup.py`. Use these wallet addresses to log in:
 
-1. `1V2zL8QR4g5AwFGHedav2z3G2yarV3u7Wwo3NCAHIt2l` (12.4654 SOL)
-2. `rt5MgKypna6kWZxqBg9lzqHenXtXw7Db0npLVra8Qsm2` (12.3567 SOL)
-3. `Tu4D9wkJi41rI25gr3wTUszwhRuhP56Cj2W63oHfHOdt` (16.1658 SOL)
+| User | Wallet Address | Initial Balance |
+|------|---------------|----------------|
+| User 1 | `1V2zL8QR4g5AwFGHedav2z3G2yarV3u7Wwo3NCAHIt2l` | 12.4654 SOL |
+| User 2 | `rt5MgKypna6kWZxqBg9lzqHenXtXw7Db0npLVra8Qsm2` | 12.3567 SOL |
+| User 3 | `Tu4D9wkJi41rI25gr3wTUszwhRuhP56Cj2W63oHfHOdt` | 16.1658 SOL |
 
-See `DEMO_WALLETS.md` for quick reference.
+> 💡 **Tip**: See [DEMO_WALLETS.md](DEMO_WALLETS.md) for quick copy-paste reference.
 
-## API Endpoints
+---
 
-### Authentication
-- `POST /api/register` - Create new synthetic wallet
-- `GET /api/user/{wallet_address}` - Get user info
+## 📚 API Reference
 
-### Trading Data
-- `GET /api/trades/{wallet_address}` - Get trade history
-- `GET /api/trades/{wallet_address}/{trade_id}` - Get specific trade
-- `GET /api/positions/{wallet_address}` - Get open positions
+### REST API Endpoints
 
-### Analytics
-- `GET /api/analytics/{wallet_address}/overall` - Overall stats
-- `GET /api/analytics/{wallet_address}/by-token` - Per-token analytics
-- `GET /api/portfolio/history/{wallet_address}` - Portfolio history
+Base URL: `http://localhost:8000`
 
-## WebSocket Protocol
+#### Authentication
 
-**Client Authentication:**
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `POST` | `/api/register` | Create new synthetic wallet |
+| `GET` | `/api/user/{wallet_address}` | Get user information |
+
+#### Trading Data
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `GET` | `/api/trades/{wallet_address}` | Get trade history with pagination |
+| `GET` | `/api/trades/{wallet_address}/{trade_id}` | Get specific trade details |
+| `GET` | `/api/positions/{wallet_address}` | Get current open positions |
+
+#### Analytics
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `GET` | `/api/analytics/{wallet_address}/overall` | Overall trading statistics |
+| `GET` | `/api/analytics/{wallet_address}/by-token` | Per-token analytics breakdown |
+| `GET` | `/api/portfolio/history/{wallet_address}` | Historical portfolio values |
+
+### WebSocket Protocol
+
+WebSocket URL: `ws://localhost:8765`
+
+#### Client Authentication
 ```json
 {
   "type": "AUTH",
-  "wallet_address": "your_wallet_address"
+  "wallet_address": "your_wallet_address_here"
 }
 ```
 
-**Server Response:**
+#### Server Authentication Response
 ```json
 {
   "type": "AUTH_SUCCESS",
   "data": {
-    "wallet_address": "...",
+    "wallet_address": "1V2zL8QR4g5AwFGHedav2z3G2yarV3u7Wwo3NCAHIt2l",
     "initial_sol_balance": 12.4654,
-    "created_at": "2025-12-07T..."
+    "created_at": "2025-12-07T10:30:00Z"
   }
 }
 ```
+
+#### Real-Time Message Types
+
+| Type | Direction | Description |
+|------|-----------|-------------|
+| `NEW_TRADE_STARTING` | Server → Client | New trade initiated with initial candles |
+| `UPDATE` | Server → Client | Price update with portfolio changes |
+| `TRADE_SUMMARY_UPDATE` | Server → Client | Trade list synchronization |
+| `ERROR` | Server → Client | Error notification |
+
+---
 
 # Project Structure
 

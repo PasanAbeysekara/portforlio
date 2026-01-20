@@ -73,7 +73,7 @@ export const projects: Project[] = [
         demo: `
           <div class="video-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
             <iframe
-              src="https://www.youtube.com/watch?v=0eC0pr-4cmY"
+              src="https://www.youtube.com/embed/0eC0pr-4cmY?si=AC4RdNpU7asRLcbY"
               title="Kafka Avro Order Pipeline"
               style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -95,7 +95,7 @@ export const projects: Project[] = [
         demo: `
           <div class="video-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
             <iframe
-              src="https://www.youtube.com/watch?v=VqvUTF7BMhM"
+              src="https://www.youtube.com/embed/VqvUTF7BMhM?si=IvcVt9kIxet19x09"
               title="Auto Trader Bot"
               style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
