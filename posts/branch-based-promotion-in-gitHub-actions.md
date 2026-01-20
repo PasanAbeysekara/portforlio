@@ -28,11 +28,7 @@ Branch-based promotion ties together three things:
 
 A standard mapping looks like this:
 
-| Branch      | Meaning            | Deployment Target    |
-| ----------- | ------------------ | -------------------- |
-| `feature/*` | Developer work     | optional preview/dev |
-| `develop`   | Integration branch | staging              |
-| `main`      | Release-ready      | production           |
+![Standard Mapping](https://raw.githubusercontent.com/mooncraze0-stack/sample-image-drive/refs/heads/main/standard-mapping.png)
 
 Promotion becomes a controlled merge path:
 
