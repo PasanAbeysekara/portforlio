@@ -16,6 +16,50 @@ export interface Project {
 
 // Project data remains the same
 export const projects: Project[] = [
+    {
+    slug: 'auto-trader-bot',
+    name: 'Auto Trader Bot - Multi-User Trading Platform',
+    description: 'A sophisticated autonomous cryptocurrency trading bot with multi-user support, real-time analytics, and comprehensive trade tracking. Built with Python, React, TypeScript, and WebSocket for real-time communication.',
+    tags: ['React', 'TypeScript', 'Python', 'Flask', 'WebSocker', 'RESTful'],
+    repoUrl: 'https://github.com/MoonCraze/auto-trader',
+    content: {
+        readmePath: `/readmes/readmes/auto-trader.md`, 
+        demo: `
+          <div class="video-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+            <iframe
+              src="https://www.youtube.com/embed/VqvUTF7BMhM?si=IvcVt9kIxet19x09"
+              title="Auto Trader Bot"
+              style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>`, 
+        architecturePath:  '/readmes/architectures/auto-trader-architecture.md', 
+        challengesPath: '/readmes/challenges/auto-trader-challenges.md'
+    },
+  },
+  {
+    slug: 'kafka-avro-order-pipeline',
+    name: 'Kafka Avro Order Pipeline',
+    description: 'A real-time order processing system built with Apache Kafka, Spring Boot, and Avro serialization, featuring automatic retry logic, dead letter queue handling, and a live terminal-style monitoring dashboard.',
+    tags: ['Kafka', 'Spring Boot', 'Java', 'Avro'],
+    repoUrl: 'https://github.com/PasanAbeysekara/kafka-avro-order-pipeline',
+    content: {
+        readmePath: `/readmes/readmes/kafka-avro-order-pipeline.md`, 
+        demo: `
+          <div class="video-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+            <iframe
+              src="https://www.youtube.com/embed/0eC0pr-4cmY?si=AC4RdNpU7asRLcbY"
+              title="Kafka Avro Order Pipeline"
+              style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>`, 
+          architecturePath:  '/readmes/architectures/kafka-avro-order-pipeline-architecture.md', 
+          challengesPath: '/readmes/challenges/kafka-avro-order-pipeline-challenges.md'
+    },
+  },
   {
     slug: 'collaborative-editor',
     name: 'Cloud-Native Real-time Collaborative Editor',
@@ -63,57 +107,13 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: 'kafka-avro-order-pipeline',
-    name: 'Kafka Avro Order Pipeline',
-    description: 'A real-time order processing system built with Apache Kafka, Spring Boot, and Avro serialization, featuring automatic retry logic, dead letter queue handling, and a live terminal-style monitoring dashboard.',
-    tags: ['Kafka', 'Spring Boot', 'Java', 'Avro'],
-    repoUrl: 'https://github.com/PasanAbeysekara/kafka-avro-order-pipeline',
-    content: {
-        readmePath: `/readmes/readmes/kafka-avro-order-pipeline.md`, 
-        demo: `
-          <div class="video-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
-            <iframe
-              src="https://www.youtube.com/embed/0eC0pr-4cmY?si=AC4RdNpU7asRLcbY"
-              title="Kafka Avro Order Pipeline"
-              style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          </div>`, 
-          architecturePath:  '/readmes/architectures/kafka-avro-order-pipeline-architecture.md', 
-          challengesPath: '/readmes/challenges/kafka-avro-order-pipeline-challenges.md'
-    },
-  },
-  {
-    slug: 'auto-trader-bot',
-    name: 'Auto Trader Bot - Multi-User Trading Platform',
-    description: 'A sophisticated autonomous cryptocurrency trading bot with multi-user support, real-time analytics, and comprehensive trade tracking. Built with Python, React, TypeScript, and WebSocket for real-time communication.',
-    tags: ['React', 'TypeScript', 'Python', 'Flask', 'WebSocker', 'RESTful'],
-    repoUrl: 'https://github.com/MoonCraze/auto-trader',
-    content: {
-        readmePath: `/readmes/readmes/auto-trader.md`, 
-        demo: `
-          <div class="video-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
-            <iframe
-              src="https://www.youtube.com/embed/VqvUTF7BMhM?si=IvcVt9kIxet19x09"
-              title="Auto Trader Bot"
-              style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          </div>`, 
-        architecturePath:  '/readmes/architectures/auto-trader-architecture.md', 
-        challengesPath: '/readmes/challenges/auto-trader-challenges.md'
-    },
-  },
-  {
     slug: 'ar-visionary-explora',
     name: 'AR VISIONARY EXPLORA - Furniture E-Commerce App',
     description: 'A Flutter-based mobile application that uses ARCore to allow users to virtually preview furniture in their own space before buying.',
     tags: ['Flutter', 'ARCore', 'Firebase'],
     repoUrl: 'https://github.com/PasanAbeysekara/AR-VisionaryExplora',
     content: {
-        readmePath: `/readmes/readmes/collaborative-editor.md`, 
+        readmePath: `/readmes/readmes/ar-visionary-explora.md`, 
         demo: `
           <div class="video-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
             <iframe
@@ -124,7 +124,8 @@ export const projects: Project[] = [
               allowfullscreen
             ></iframe>
           </div>`, 
-        architecturePath: `...`, challengesPath: `...`
+        architecturePath: '/readmes/architectures/ar-visionary-explora-architecture.md', 
+        challengesPath: '/readmes/challenges/ar-visionary-explora-challenges.md'
     },
   },
 ];

@@ -135,7 +135,7 @@ export default async function HomePage() {
         </div>
         <FeaturedProjects projects={projects} />
         <div className="mt-8">
-            <h2 className="text-xl font-semibold mb-4">Activity Overview</h2>
+            <h2 className="text-xl font-semibold mb-4">Github Activity Overview</h2>
             <ContributionGraph data={githubData?.contributionsCollection ?? null} />
         </div>
       </div>
