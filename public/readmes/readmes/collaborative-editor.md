@@ -4,7 +4,7 @@
 
 This project is a backend system for a real-time, multi-user collaborative text editor, modeled after platforms like Google Docs. It is architected as a set of cloud-native microservices designed to run on a container orchestration platform. The system handles user authentication, document management, real-time operation broadcasting, and asynchronous notifications, demonstrating a complete, production-ready architecture.
 
-For a detailed explanation of the system's design, components, and communication patterns, please see [ARCHITECTURE.md](ARCHITECTURE.md).
+For a detailed explanation of the system's design, components, and communication patterns, please see ARCHITECTURE.md.
 
 ## Core Features
 
