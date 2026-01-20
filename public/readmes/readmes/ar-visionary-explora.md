@@ -1,10 +1,6 @@
-<p align="center">
-  <h1 align="center">AR-Visionary Explora Project</h1>
-     <p align="center">
-   AR-Visionary Explora is a revolutionary mobile application designed to enhance the furniture e-commerce experience through the integration of augmented reality (AR) technology. This Flutter-based app empowers users to visualize and assess furniture items in their living spaces before making a purchase, revolutionizing the traditional furniture buying process.
-  </p>
-</p>
-<div align="center">
+#  AR-Visionary Explora Project
+
+AR-Visionary Explora is a revolutionary mobile application designed to enhance the furniture e-commerce experience through the integration of augmented reality (AR) technology. This Flutter-based app empowers users to visualize and assess furniture items in their living spaces before making a purchase, revolutionizing the traditional furniture buying process.
 
   ![Flutter Badge](https://img.shields.io/badge/Flutter-2.10.0-blue?style=for-the-badge&logo=flutter&logoColor=white)
   ![Firebase Badge](https://img.shields.io/badge/Firebase-9.6.0-orange?style=for-the-badge&logo=firebase&logoColor=white)
@@ -13,8 +9,7 @@
   ![AWS Badge](https://img.shields.io/badge/Amazon_AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)
 </div>
 
-
-<img width="1603" alt="Screenshot 2024-02-19 at 10 50 10 AM" src="https://github.com/user-attachments/assets/2220bf86-1a34-4e0f-ab53-ffd4137b201c">
+[Prototypes](https://github.com/user-attachments/assets/2220bf86-1a34-4e0f-ab53-ffd4137b201c)
 
 ## Scope
 The project focuses on providing users with a unique and immersive shopping experience, covering the following key aspects:
