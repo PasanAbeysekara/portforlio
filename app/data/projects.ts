@@ -128,6 +128,28 @@ export const projects: Project[] = [
         challengesPath: '/readmes/challenges/ar-visionary-explora-challenges.md'
     },
   },
+    {
+    slug: 'snake-arena',
+    name: 'Snake Arena - Functional Programming Game',
+    description: 'Built entirely in Haskell using functional programming principles, Snake Arena proves that complex, stateful, real-time applications can be developed with pure functions, immutable data, and zero side effects in the core logic.',
+    tags: ['Haskell', 'Functional Programming', 'Game Development'],
+    repoUrl: 'https://github.com/PasanAbeysekara/snake-arena',
+    content: {
+        readmePath: `/readmes/readmes/snake-arena.md`, 
+        demo: `
+          <div class="video-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+            <iframe
+              src="https://www.youtube.com/embed/_yWrS3h9hDw?si=d1ZBLlW4Hyxpkyyp"
+              title="Snake Arena Demo"
+              style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>`, 
+        architecturePath: '/readmes/architectures/snake-arena-architecture.md', 
+        challengesPath: '/readmes/challenges/snake-arena-challenges.md'
+    },
+  },
 ];
 
 export const yourUsername = 'PasanAbeysekara';

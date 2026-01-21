@@ -8,7 +8,7 @@ AR-Visionary Explora is a revolutionary mobile application designed to enhance t
   ![GitHub Badge](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
   ![AWS Badge](https://img.shields.io/badge/Amazon_AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)
 
-[Prototypes](https://github.com/user-attachments/assets/2220bf86-1a34-4e0f-ab53-ffd4137b201c)
+![Prototypes](https://github.com/user-attachments/assets/2220bf86-1a34-4e0f-ab53-ffd4137b201c)
 
 ## Scope
 The project focuses on providing users with a unique and immersive shopping experience, covering the following key aspects:
