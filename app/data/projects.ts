@@ -159,9 +159,22 @@ export const projects: Project[] = [
     repoUrl: 'https://github.com/PasanAbeysekara/Taxi-Pickup-Hotspot-Analysis-using-Hadoop-MapReducet',
     content: {
         readmePath: `/readmes/readmes/taxi-data-hadoop-mapreduce.md`, 
-        demoPath: '/readmes/demos/taxi-data-hadoop-mapreduce-demo.md', // Use demoPath instead of demo
+        demoPath: '/readmes/demos/taxi-data-hadoop-mapreduce-demo.md',
         architecturePath: '/readmes/architectures/taxi-data-hadoop-mapreduce-architecture.md', 
         challengesPath: '/readmes/challenges/taxi-data-hadoop-mapreduce-challenges.md'
+    },
+  },
+  {
+    slug: 'wpf-hospital-management-system',
+    name: '.NET core WPF Hospital Management System',
+    description: 'The Hospital Management System is a comprehensive desktop application developed using WPF (Windows Presentation Foundation) and utilizes SQLite as the database engine. This repository encompasses the source code and project files for building a robust and user-friendly hospital management system.',
+    tags: ['.NET', 'WPF', 'C#', 'SQLite'],
+    repoUrl: 'https://github.com/PasanAbeysekara/Hospital-Management-System',
+    content: {
+        readmePath: `/readmes/readmes/hospital-management-system.md`, 
+        demoPath: '/readmes/demos/hospital-management-system-demo.md', 
+        architecturePath: '/readmes/architectures/hospital-management-system-architecture.md', 
+        challengesPath: '/readmes/challenges/hospital-management-system-challenges.md'
     },
   },
 ];

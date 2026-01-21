@@ -74,7 +74,7 @@ export default function ContactPage() {
                                         value={formData.name}
                                         onChange={handleChange}
                                         required
-                                        placeholder="John Doe"
+                                        placeholder="Sunil Perera"
                                         className="w-full bg-gh-bg border border-gh-border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gh-link"
                                     />
                                 </div>
@@ -90,7 +90,7 @@ export default function ContactPage() {
                                         value={formData.email}
                                         onChange={handleChange}
                                         required
-                                        placeholder="john@example.com"
+                                        placeholder="sunil@gmail.com"
                                         className="w-full bg-gh-bg border border-gh-border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gh-link"
                                     />
                                 </div>

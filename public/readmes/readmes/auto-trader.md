@@ -89,7 +89,7 @@ Comprehensive analytics dashboard with three interactive tabs:
 
 ## 🏗️ Architecture
 
-The system follows a modern full-stack architecture with clear separation of concerns. See [Architecture.md](Architecture.md) for detailed documentation.
+The system follows a modern full-stack architecture with clear separation of concerns. See **Architecture.md** for detailed documentation.
 
 ### Backend Components (Python)
 
@@ -206,7 +206,7 @@ Three demo accounts are pre-created with `test_setup.py`. Use these wallet addre
 | User 2 | `rt5MgKypna6kWZxqBg9lzqHenXtXw7Db0npLVra8Qsm2` | 12.3567 SOL |
 | User 3 | `Tu4D9wkJi41rI25gr3wTUszwhRuhP56Cj2W63oHfHOdt` | 16.1658 SOL |
 
-> 💡 **Tip**: See [DEMO_WALLETS.md](DEMO_WALLETS.md) for quick copy-paste reference.
+> 💡 **Tip**: See [DEMO_WALLETS.md](https://github.com/MoonCraze/auto-trader/blob/main/DEMO_WALLETS.md) for quick copy-paste reference.
 
 ---
 
