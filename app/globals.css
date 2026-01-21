@@ -171,4 +171,10 @@
   .markdown-content img, .markdown-content video { @apply max-w-full rounded-md my-6; }
   .markdown-content blockquote { @apply border-l-4 border-gh-border pl-4 text-gh-text-secondary italic my-6; }
   .markdown-content hr { @apply my-8 border-gh-border; }
+  
+  /* Table styles */
+  .markdown-content table { @apply w-full border-collapse border border-gh-border my-6; }
+  .markdown-content th { @apply bg-gh-bg-secondary border border-gh-border px-4 py-2 text-left font-semibold; }
+  .markdown-content td { @apply border border-gh-border px-4 py-2; }
+  .markdown-content tr:nth-child(even) { @apply bg-gh-bg-secondary/50; }
 }

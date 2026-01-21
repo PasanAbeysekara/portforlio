@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Project } from '../data/projects';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import clsx from 'clsx';
 
 interface ProjectClientContentProps {
@@ -76,7 +77,7 @@ export default function ProjectClientContent({ project }: ProjectClientContentPr
       if (contentError) return <div className="p-6">{contentError}</div>;
       if (fetchedContent) return (
         <div className="markdown-content p-6">
-          <ReactMarkdown>{fetchedContent}</ReactMarkdown>
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{fetchedContent}</ReactMarkdown>
         </div>
       );
 

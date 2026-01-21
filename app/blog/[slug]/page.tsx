@@ -2,6 +2,7 @@ import { getPostData, getSortedPostsData } from '@/app/lib/posts';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import { format, parseISO } from 'date-fns';
 import { Calendar, Tag } from 'lucide-react';
@@ -68,7 +69,7 @@ export default async function PostPage({ params }: ParamsPromise) {
 
       {/* --- MARKDOWN CONTENT --- */}
       <div className="markdown-content">
-        <ReactMarkdown rehypePlugins={[rehypeRaw]}>{post.content}</ReactMarkdown>
+        <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>{post.content}</ReactMarkdown>
       </div>
     </article>
   );
