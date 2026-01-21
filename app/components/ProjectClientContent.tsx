@@ -27,6 +27,7 @@ export default function ProjectClientContent({ project }: ProjectClientContentPr
   useEffect(() => {
     const getContentPath = (tab: Tab): string | undefined => {
       if (tab === 'readme') return project.content.readmePath;
+      if (tab === 'demo') return project.content.demoPath;
       if (tab === 'architecture') return project.content.architecturePath;
       if (tab === 'challenges') return project.content.challengesPath;
       return undefined;
@@ -65,8 +66,23 @@ export default function ProjectClientContent({ project }: ProjectClientContentPr
 
   const renderContent = () => {
     if (activeTab === 'demo') {
+      // If there's a demoPath, show fetched markdown content
+      if (project.content.demoPath) {
+        if (loadingContent) return <div className="p-6">Loading...</div>;
+        if (contentError) return <div className="p-6">{contentError}</div>;
+        if (fetchedContent) return (
+          <div className="markdown-content p-6">
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>{fetchedContent}</ReactMarkdown>
+          </div>
+        );
+        return <div className="p-6">No demo content available.</div>;
+      }
+      // Otherwise, show the HTML video embed
       const content = project.content.demo;
-      return <div className="p-4" dangerouslySetInnerHTML={{ __html: content }} />;
+      if (content) {
+        return <div className="p-4" dangerouslySetInnerHTML={{ __html: content }} />;
+      }
+      return <div className="p-6">No demo available.</div>;
     }
 
     if (activeTab === 'readme' || activeTab === 'architecture' || activeTab === 'challenges') {

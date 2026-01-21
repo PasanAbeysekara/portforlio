@@ -8,7 +8,8 @@ export interface Project {
   repoUrl:string;
   content: {
     readmePath?: string;
-    demo: string;
+    demo?: string; // HTML embed for video
+    demoPath?: string; // Path to markdown file with screenshots
     architecturePath?: string;
     challengesPath?: string;
   };
@@ -148,6 +149,19 @@ export const projects: Project[] = [
           </div>`, 
         architecturePath: '/readmes/architectures/snake-arena-architecture.md', 
         challengesPath: '/readmes/challenges/snake-arena-challenges.md'
+    },
+  },
+  {
+    slug: 'taxi-data-hadoop-map-reduce',
+    name: 'Taxi Pickup Hotspot Analysis using Hadoop MapReduce',
+    description: 'This project implements a distributed data processing system using Hadoop MapReduce to analyze NYC Yellow Taxi trip data and identify pickup hotspots across New York City. By processing 10.9 million trip records from January 2016, we extract meaningful insights about taxi demand patterns across NYCs 265 taxi zones.',
+    tags: ['Big Data','Java', 'Hadoop', 'MapReduce', 'Data Analysis'],
+    repoUrl: 'https://github.com/PasanAbeysekara/Taxi-Pickup-Hotspot-Analysis-using-Hadoop-MapReducet',
+    content: {
+        readmePath: `/readmes/readmes/taxi-data-hadoop-mapreduce.md`, 
+        demoPath: '/readmes/demos/taxi-data-hadoop-mapreduce-demo.md', // Use demoPath instead of demo
+        architecturePath: '/readmes/architectures/taxi-data-hadoop-mapreduce-architecture.md', 
+        challengesPath: '/readmes/challenges/taxi-data-hadoop-mapreduce-challenges.md'
     },
   },
 ];
