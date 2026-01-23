@@ -54,7 +54,7 @@ const experiences: Experience[] = [
     companyUrl: "https://amplify.lk/",
     logo: "/logos/amplify.png",
     location: "Sri Lanka",
-    period: "Jan 2024 - Jul 2024 & Jan 2025 - May 2025 (Expected)",
+    period: "Jan 2024 - Jul 2024",
     details: [
       {
         points: [
