@@ -2,8 +2,6 @@
 
 > A real-time order processing system built with Apache Kafka, Spring Boot, and Avro serialization, featuring automatic retry logic, dead letter queue handling, and a live terminal-style monitoring dashboard.
 
-<!-- ![Terminal Dashboard](./docs/terminal-ui-preview.png) -->
-<!-- <img src="./docs/terminal-ui-preview.png" alt="ATerminal Dashboardrchitecture" style="display: block; margin: 0 auto;"> -->
 
 ![Terminal Dashboard](https://raw.githubusercontent.com/PasanAbeysekara/kafka-avro-order-pipeline/main/docs/terminal-ui-preview.png)
 
@@ -21,7 +19,6 @@ The system includes:
 
 ## How It Works
 
-<img src="./docs/architecture.png" alt="Architecture" width="200" style="display: block; margin: 0 auto;">
 
 ### Message Flow
 
