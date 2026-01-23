@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Zero Trust on Kubernetes architecture">
+  <defs>
+    <style>
+      .bg { fill: #0b1220; }
+      .zone { fill: #0f1a2e; stroke: #2b3b59; stroke-width: 2; rx: 16; }
+      .zoneLight { fill: #0e2236; stroke: #2b3b59; stroke-width: 2; rx: 16; }
+      .card { fill: #0c1526; stroke: #35537a; stroke-width: 2; rx: 14; }
+      .title { fill: #e6edf7; font: 700 22px system-ui, -apple-system, Segoe UI, Roboto, Arial; }
+      .text { fill: #c7d4ea; font: 500 16px system-ui, -apple-system, Segoe UI, Roboto, Arial; }
+      .small { fill: #a9bddb; font: 500 14px system-ui, -apple-system, Segoe UI, Roboto, Arial; }
+      .pill { fill: #102a43; stroke: #2f6fbd; stroke-width: 2; rx: 999; }
+      .pillText { fill: #d6e8ff; font: 700 14px system-ui, -apple-system, Segoe UI, Roboto, Arial; }
+      .arrow { stroke: #8fb7ff; stroke-width: 3; fill: none; marker-end: url(#m); opacity: 0.9; }
+      .dash { stroke-dasharray: 8 8; }
+    </style>
+    <marker id="m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8fb7ff" />
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1600" height="900" />
+
+  <!-- User Access Zone -->
+  <rect class="zone" x="60" y="50" width="1480" height="120" />
+  <text class="title" x="90" y="95">User Access Zone</text>
+  <rect class="pill" x="90" y="115" width="160" height="34" />
+  <text class="pillText" x="110" y="138">End User</text>
+  <rect class="pill" x="280" y="115" width="140" height="34" />
+  <text class="pillText" x="305" y="138">Internet</text>
+
+  <!-- CI Zone -->
+  <rect class="zoneLight" x="60" y="210" width="420" height="630" />
+  <text class="title" x="90" y="255">CI Zone: Dev &amp; Integration</text>
+
+  <rect class="card" x="90" y="285" width="360" height="150" />
+  <text class="text" x="115" y="325">Source Repo</text>
+  <text class="small" x="115" y="353">1) Developer pushes code</text>
+  <text class="small" x="115" y="378">2) CI builds, tests, scans</text>
+
+  <rect class="card" x="90" y="460" width="360" height="160" />
+  <text class="text" x="115" y="500">CI/CD Pipeline</text>
+  <text class="small" x="115" y="528">3) Build image</text>
+  <text class="small" x="115" y="553">4) Publish to registry</text>
+  <text class="small" x="115" y="578">5) Update GitOps manifests</text>
+
+  <rect class="card" x="90" y="645" width="360" height="170" />
+  <text class="text" x="115" y="685">GitOps Manifests Repo</text>
+  <text class="small" x="115" y="713">Declarative desired state</text>
+  <text class="small" x="115" y="738">Env overlays: staging / prod</text>
+
+  <!-- Runtime Zone -->
+  <rect class="zone" x="520" y="210" width="1020" height="630" />
+  <text class="title" x="550" y="255">Runtime Zone: Kubernetes Cluster</text>
+
+  <!-- Ingress + ArgoCD -->
+  <rect class="card" x="550" y="285" width="420" height="110" />
+  <text class="text" x="575" y="325">Istio Ingress Gateway</text>
+  <text class="small" x="575" y="353">JWT validation + routing</text>
+
+  <rect class="card" x="1000" y="285" width="510" height="110" />
+  <text class="text" x="1025" y="325">Argo CD</text>
+  <text class="small" x="1025" y="353">Watches GitOps repo, syncs desired state</text>
+
+  <!-- Staging Namespace -->
+  <rect class="card" x="550" y="420" width="470" height="260" />
+  <text class="text" x="575" y="460">Staging Namespace</text>
+  <rect class="pill" x="575" y="485" width="190" height="32" />
+  <text class="pillText" x="592" y="507">Microservice A</text>
+  <rect class="pill" x="780" y="485" width="190" height="32" />
+  <text class="pillText" x="807" y="507">Istio Sidecar</text>
+  <rect class="pill" x="575" y="540" width="190" height="32" />
+  <text class="pillText" x="592" y="562">Microservice B</text>
+  <rect class="pill" x="780" y="540" width="190" height="32" />
+  <text class="pillText" x="807" y="562">Istio Sidecar</text>
+  <text class="small" x="575" y="615">mTLS encrypted + authorized east-west traffic</text>
+
+  <!-- Production Namespace -->
+  <rect class="card" x="1040" y="420" width="470" height="260" />
+  <text class="text" x="1065" y="460">Production Namespace</text>
+  <rect class="pill" x="1065" y="485" width="190" height="32" />
+  <text class="pillText" x="1082" y="507">Microservice A</text>
+  <rect class="pill" x="1270" y="485" width="190" height="32" />
+  <text class="pillText" x="1297" y="507">Istio Sidecar</text>
+  <rect class="pill" x="1065" y="540" width="190" height="32" />
+  <text class="pillText" x="1082" y="562">Microservice B</text>
+  <rect class="pill" x="1270" y="540" width="190" height="32" />
+  <text class="pillText" x="1297" y="562">Istio Sidecar</text>
+  <text class="small" x="1065" y="615">Strict policies, gated promotion, separate secrets</text>
+
+  <!-- Observability / Secrets -->
+  <rect class="card" x="550" y="705" width="960" height="115" />
+  <text class="text" x="575" y="745">Observability &amp; Secrets</text>
+  <rect class="pill" x="575" y="765" width="170" height="32" />
+  <text class="pillText" x="602" y="787">Prometheus</text>
+  <rect class="pill" x="760" y="765" width="190" height="32" />
+  <text class="pillText" x="786" y="787">OpenSearch</text>
+  <rect class="pill" x="965" y="765" width="240" height="32" />
+  <text class="pillText" x="990" y="787">Fluent Bit Logs</text>
+  <rect class="pill" x="1220" y="765" width="220" height="32" />
+  <text class="pillText" x="1250" y="787">HashiCorp Vault</text>
+
+  <!-- Arrows -->
+  <path class="arrow" d="M 250 132 C 420 132, 520 132, 720 315" />
+  <path class="arrow" d="M 450 540 C 650 540, 780 540, 1000 340" />
+  <path class="arrow dash" d="M 270 575 C 520 575, 520 575, 1000 340" />
+
+  <path class="arrow" d="M 760 395 C 760 420, 760 420, 760 485" />
+  <path class="arrow" d="M 1200 395 C 1200 420, 1200 420, 1200 485" />
+
+  <path class="arrow dash" d="M 1020 340 C 920 410, 870 410, 800 485" />
+  <path class="arrow dash" d="M 1250 340 C 1260 410, 1300 420, 1310 485" />
+
+  <text class="small" x="585" y="403">Edge: authenticate</text>
+  <text class="small" x="1018" y="403">Control plane: reconcile</text>
+
+  <text class="small" x="560" y="860">Zero Trust: identity + policy + encrypted traffic + continuous verification</text>
+</svg>

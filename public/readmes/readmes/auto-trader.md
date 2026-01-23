@@ -347,4 +347,6 @@ Edit `config.py` to customize:
 
 ## Contributing
 
-This is an academic project (FYP). Contributions and suggestions are welcome!
+This part of academic project (FYP). Contributions and suggestions are welcome!
+
+Complete FYP (Final Year Project) Codebase: https://github.com/MoonCraze

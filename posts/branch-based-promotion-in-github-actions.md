@@ -1,11 +1,10 @@
 ---
-
 title: 'Branch-Based Promotion in GitHub Actions'
 date: '2026-01-15'
 summary: 'Branch-based promotion is a CI/CD strategy where environments map to branches (develop → main) and GitHub Actions deploys based on branch changes, with hard gates enforced via protected branches and GitHub Environments. This guide explains the model, the required GitHub primitives, and provides production-ready workflow templates.'
 image: '/images/blog/branch-based-promotion-github-actions.png'
 categories: ['DevOps', 'CI/CD', 'GitHub Actions', 'Software Delivery', 'Platform Engineering']
-----------------------------------------------------------------------------------------------
+---
 
 Branch-based promotion is a CI/CD approach where **promotion happens by promoting branches**. Instead of manually choosing “deploy to staging” or “deploy to prod”, you treat your branches as the promotion pipeline:
 
