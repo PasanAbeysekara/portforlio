@@ -125,6 +125,6 @@ kafka:
 
 ## Documentation
 
-- [Implementation Details](./IMPLEMENTATION.md) - Deep dive into architecture
-- [Quick Start Guide](./QUICKSTART.md) - Get running in 5 minutes
-- [Testing Guide](./TESTING.md) - Test scenarios and validation
+- [Implementation Details](https://github.com/PasanAbeysekara/kafka-avro-order-pipeline/blob/main/IMPLEMENTATION.md) - Deep dive into architecture
+- [Quick Start Guide](https://github.com/PasanAbeysekara/kafka-avro-order-pipeline/blob/main/QUICKSTART.md) - Get running in 5 minutes
+- [Testing Guide](https://github.com/PasanAbeysekara/kafka-avro-order-pipeline/blob/main/TESTING.md) - Test scenarios and validation
