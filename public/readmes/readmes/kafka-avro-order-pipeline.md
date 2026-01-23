@@ -19,6 +19,8 @@ The system includes:
 
 ## How It Works
 
+![Architecture](https://github.com/user-attachments/assets/89d1d568-5ea0-4e6d-8300-5223717d0088)
+
 
 ### Message Flow
 
