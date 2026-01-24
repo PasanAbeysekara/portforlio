@@ -538,16 +538,3 @@ While current performance is acceptable, could improve:
 - Consider strictness annotations for critical paths
 - Optimize list operations with vectors/arrays
 
----
-
-## Conclusion
-
-Building Snake Arena demonstrated that functional programming is viable for complex, stateful, real-time applications. While challenges exist, the functional solutions often provide unexpected benefits:
-
-- **Immutability** → Easier debugging and time travel
-- **Pure Functions** → Effortless testing and replay systems
-- **Strong Types** → Compile-time correctness guarantees
-- **Lazy Evaluation** → Efficient processing
-- **Higher-Order Functions** → Elegant, composable code
-
-The challenges encountered pushed us to think differently, resulting in a cleaner, more maintainable codebase than typical imperative game code.

@@ -469,39 +469,6 @@ class OrderStatsServiceTest {
 ### Challenge
 The current implementation is designed for demonstration and learning. Several production-grade features are missing or simplified.
 
-### Current Limitations
-
-#### Security
-- ❌ No authentication/authorization
-- ❌ No encryption (SSL/TLS)
-- ❌ CORS allows all origins
-- ❌ No rate limiting
-- ❌ No input validation
-
-#### Persistence
-- ❌ All data in-memory (lost on restart)
-- ❌ No database integration
-- ❌ DLQ not persisted
-- ❌ Statistics not stored historically
-
-#### Observability
-- ❌ No distributed tracing (Zipkin, Jaeger)
-- ❌ No metrics export (Prometheus)
-- ❌ Limited structured logging
-- ❌ No alerting system
-
-#### Scalability
-- ❌ Single instance only (no load balancing)
-- ❌ No consumer group rebalancing testing
-- ❌ No backpressure handling
-- ❌ Fixed partition count
-
-#### Resilience
-- ❌ No circuit breaker pattern
-- ❌ No health checks
-- ❌ No graceful shutdown
-- ❌ No Kafka connection retry logic
-
 ### Production Recommendations
 
 #### High Priority
@@ -608,23 +575,5 @@ public void broadcastUpdate(OrderDTO order) {
 - **Spring Boot in Action** (Craig Walls)
 - **Enterprise Integration Patterns** (Hohpe, Woolf)
 
----
-
-## Conclusion
-
-Building this Kafka Avro Order Pipeline provided hands-on experience with:
-- Event-driven architecture patterns
-- Message serialization with Avro
-- Fault-tolerant message processing
-- Real-time data streaming
-- Concurrent programming in Java
-- Docker containerization
-- Full-stack development (backend + frontend)
-
-The challenges encountered—from thread-safe statistics to retry logic—are representative of real-world distributed systems development. The solutions implemented demonstrate practical patterns applicable to production systems, with clear documentation of trade-offs and limitations.
-
-This project serves as a solid foundation for understanding Kafka-based architectures and can be extended with additional features like schema registry integration, Kafka Streams processing, or CQRS patterns.
-
----
 
 *For questions or suggestions, please open an issue on the GitHub repository.*

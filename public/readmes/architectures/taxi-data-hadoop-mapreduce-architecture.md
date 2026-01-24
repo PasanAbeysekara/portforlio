@@ -392,13 +392,3 @@ Typical Configuration:
 - **Flink**: For stream processing
 - **Presto**: For interactive analytics
 
-## Summary
-
-This architecture implements a robust, scalable, and fault-tolerant system for analyzing taxi pickup patterns using Hadoop MapReduce. The design emphasizes:
-- **Reliability**: Comprehensive error handling and validation
-- **Performance**: Combiner optimization and Parquet format
-- **Scalability**: Horizontal scaling across Hadoop cluster
-- **Maintainability**: Clear separation of concerns and modular design
-- **Observability**: Extensive counters and logging
-
-The system successfully processes large-scale taxi data (10+ GB, millions of records) to identify pickup hotspots across NYC's 265 taxi zones.
