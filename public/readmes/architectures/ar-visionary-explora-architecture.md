@@ -1,284 +1,315 @@
-# Architecture Documentation
+# System Architecture
 
 ## Overview
-AR-Visionary Explora is a Flutter-based mobile application that integrates augmented reality (AR) technology with e-commerce functionality to provide an immersive furniture shopping experience. The application follows a modular architecture with clear separation of concerns.
+AR-Visionary Explora is a cross-platform mobile application built with Flutter that leverages augmented reality technology to revolutionize the furniture e-commerce experience. The application allows users to visualize furniture items in their real-world environment before making purchase decisions.
 
 ## Technology Stack
 
-### Frontend
-- **Framework**: Flutter (SDK >=3.1.5 <4.0.0)
-- **Language**: Dart
-- **UI/UX**: Material Design 3
-- **Fonts**: Google Fonts
-- **Animations**: animate_do
-- **SVG Support**: flutter_svg
-- **Loading Indicators**: flutter_spinkit
+### Frontend Framework
+- **Flutter SDK** (>=3.1.5 <4.0.0)
+  - Cross-platform development for iOS, Android, Web, Windows, macOS, and Linux
+  - Material Design 3 implementation
+  - Hot reload for rapid development
 
-### Backend & Services
-- **Backend as a Service**: Firebase
-  - Firebase Core
-  - Cloud Firestore (Database)
-  - Firebase Storage (Asset Storage)
-- **State Management**: Provider pattern
-- **HTTP Client**: http package
+### Backend & Cloud Services
+- **Firebase Core** (v2.24.2)
+  - Authentication and user management
+  - Real-time data synchronization
+- **Cloud Firestore** (v4.13.6)
+  - NoSQL database for storing product catalog, user data, and orders
+  - Real-time data synchronization across devices
+- **Firebase Storage** (v11.5.6)
+  - Storage for product images and AR model assets
 
 ### Augmented Reality
-- **AR Engine**: augmented_reality_plugin (v4.0.1)
-- **Platform Support**: ARCore (Android)
+- **Augmented Reality Plugin** (v4.0.1)
+  - AR visualization capabilities
+  - Real-time 3D object placement and interaction
+  - Camera integration for environmental mapping
 
-### Additional Features
-- **Image Handling**: image_picker
-- **Notifications**: fluttertoast
-- **External Links**: url_launcher
-- **Phone Integration**: 
-  - flutter_phone_direct_caller
-  - ussd_phone_call_sms
-- **Logging**: logger
+### State Management
+- **Provider** (v6.1.1)
+  - Reactive state management
+  - CartProvider for shopping cart functionality
+  - Separation of business logic from UI
 
-## Project Structure
+### UI/UX Libraries
+- **Google Fonts** (v6.1.0) - Typography customization
+- **Flutter SVG** (v2.0.9) - Vector graphics support
+- **Animate Do** (v3.1.2) - Pre-built animations
+- **Flutter SpinKit** (v5.2.0) - Loading indicators
+
+### Utility Libraries
+- **HTTP** (v1.1.0) - REST API communication
+- **Image Picker** (v1.0.5) - Image selection from gallery/camera
+- **URL Launcher** (v6.2.3) - External link handling
+- **Logger** (v2.0.2+1) - Debugging and logging
+- **Fluttertoast** (v8.0.7) - User notifications
+- **Flutter Phone Direct Caller** (v2.1.1) - Direct calling functionality
+- **USSD Phone Call SMS** (v0.0.3) - Communication features
+
+## Application Architecture
+
+### Layered Architecture Pattern
 
 ```
-lib/
-├── main.dart                    # Application entry point
-├── components/                  # Reusable UI components
-│   ├── app_logo.dart
-│   ├── botttom_nav_tile.dart
-│   ├── common_back_button.dart
-│   ├── custom_text.dart
-│   ├── custom_textfield.dart
-│   ├── cutomer_button.dart
-│   └── social_button.dart
-├── screens/                     # Application screens
-│   ├── auth/                    # Authentication screens
-│   │   ├── login.dart
-│   │   ├── signup.dart
-│   │   └── forgot_password.dart
-│   ├── main/                    # Main application screens
-│   │   ├── main_screen.dart
-│   │   ├── home/
-│   │   ├── search/
-│   │   ├── cart/
-│   │   │   ├── cart.dart
-│   │   │   ├── provider/
-│   │   │   │   └── CartProvider.dart
-│   │   │   ├── models/
-│   │   │   │   ├── Product.dart
-│   │   │   │   └── ShoppingCart.dart
-│   │   │   └── widgets/
-│   │   │       ├── cart_tile.dart
-│   │   │       ├── cart_amount.dart
-│   │   │       └── bottom_raw.dart
-│   │   ├── favourites/
-│   │   ├── product_details/
-│   │   ├── profile/
-│   │   └── myhome/
-│   └── splash/                  # Splash screen
-│       └── splash.dart
-└── utils/                       # Utility classes
-    ├── constants/               # Application constants
-    │   ├── app_assets.dart
-    │   └── app_colors.dart
-    └── helpers/                 # Helper functions
-        ├── helpers.dart
-        └── size_config.dart
+┌─────────────────────────────────────────────────────┐
+│                  Presentation Layer                 │
+│  ┌──────────┐  ┌──────────┐  ┌──────────────────┐   │
+│  │ Screens  │  │Components│  │   Splash Screen  │   │
+│  └──────────┘  └──────────┘  └──────────────────┘   │
+└─────────────────────────────────────────────────────┘
+                        │
+┌─────────────────────────────────────────────────────┐
+│                  Business Logic Layer               │
+│  ┌──────────┐  ┌──────────┐  ┌──────────────────┐   │
+│  │Providers │  │  Helpers │  │   Validators     │   │
+│  └──────────┘  └──────────┘  └──────────────────┘   │
+└─────────────────────────────────────────────────────┘
+                        │
+┌─────────────────────────────────────────────────────┐
+│                    Data Layer                       │
+│  ┌──────────┐  ┌──────────┐  ┌──────────────────┐   │
+│  │ Firebase │  │ REST APIs│  │  Local Storage   │   │
+│  └──────────┘  └──────────┘  └──────────────────┘   │
+└─────────────────────────────────────────────────────┘
 ```
 
-## Architecture Patterns
+## Directory Structure
 
-### 1. State Management - Provider Pattern
-The application uses the Provider pattern for state management:
+### `/lib` - Main Application Code
 
+#### `/screens` - UI Screens
+- **`/auth`** - Authentication flows
+  - `login.dart` - User login screen
+  - `signup.dart` - User registration screen
+  - `forgot_password.dart` - Password recovery
+
+- **`/main`** - Core application screens
+  - `main_screen.dart` - Bottom navigation container
+  - **`/home`** - Home screen and product browsing
+  - **`/myhome`** - AR functionality and product management
+    - `homeScreen.dart` - Main furniture catalog
+    - `item_upload_screen.dart` - Product upload interface
+    - `virtual_ar_view_screen.dart` - AR visualization
+    - `firebase_options.dart` - Firebase configuration
+  - **`/product_details`** - Product information views
+  - **`/cart`** - Shopping cart functionality
+    - `/provider/CartProvider.dart` - Cart state management
+  - **`/favourites`** - Wishlist/saved items
+  - **`/search`** - Product search interface
+  - **`/profile`** - User profile management
+
+- **`/splash`** - App initialization
+  - `splash.dart` - Loading screen with branding
+
+#### `/components` - Reusable UI Components
+- `app_logo.dart` - Brand logo widget
+- `custom_text.dart` - Styled text components
+- `custom_textfield.dart` - Form input fields
+- `cutomer_button.dart` - Custom button widgets
+- `common_back_button.dart` - Navigation back button
+- `botttom_nav_tile.dart` - Bottom navigation items
+- `social_button.dart` - Social authentication buttons
+
+#### `/utils` - Utility Functions and Constants
+- **`/constants`**
+  - `app_colors.dart` - Color palette definitions
+  - `app_assets.dart` - Asset path constants
+- **`/helpers`**
+  - `helpers.dart` - Common utility functions
+  - `size_config.dart` - Responsive sizing calculations
+
+### Platform-Specific Directories
+
+#### `/android` - Android Platform
+- Gradle build configuration
+- `google-services.json` - Firebase Android config
+- AndroidManifest.xml configurations
+- Native Android code integration
+
+#### `/ios` - iOS Platform
+- CocoaPods dependencies
+- `GoogleService-Info.plist` - Firebase iOS config
+- `firebase_app_id_file.json` - Firebase app identifier
+- Info.plist configurations
+- Swift bridging headers
+
+#### `/web` - Web Platform
+- `index.html` - Web entry point
+- `manifest.json` - PWA configuration
+- Web-specific assets
+
+#### `/linux`, `/macos`, `/windows` - Desktop Platforms
+- CMake build configurations
+- Platform-specific implementations
+- Native API integrations
+
+## Data Flow Architecture
+
+### User Authentication Flow
+```
+User Input → Auth Screen → Firebase Auth → Cloud Firestore
+                                ↓
+                          User Session ← Provider State
+```
+
+### Shopping Cart Flow
+```
+Product Selection → Add to Cart → CartProvider (State)
+                                        ↓
+                                  Local State ← Real-time Updates
+                                        ↓
+                                  Checkout → Firebase/Payment Gateway
+```
+
+### AR Visualization Flow
+```
+Product Selection → Product Details → AR View Button
+                                          ↓
+                                 virtual_ar_view_screen.dart
+                                          ↓
+                                 AugmentedRealityPlugin
+                                          ↓
+                                 Camera + AR Engine (ARCore)
+                                          ↓
+                                 3D Model Rendering in Real Space
+```
+
+## State Management Strategy
+
+### Provider Pattern Implementation
 - **CartProvider**: Manages shopping cart state
-  - Add/remove items from cart
-  - Calculate total prices
-  - Handle discounts and taxes
-  - Notify listeners of state changes
+  - Add/remove items
+  - Update quantities
+  - Calculate totals
+  - Persist cart state
 
-```dart
-ChangeNotifierProvider(
-  create: (context) => CartProvider(),
-  child: MyApp(),
-)
+### State Propagation
 ```
-
-### 2. Component-Based Architecture
-Reusable UI components are separated into the `components/` directory:
-- Custom buttons
-- Custom text fields
-- Navigation tiles
-- Social login buttons
-- Branding elements (app logo)
-
-### 3. Screen-Based Organization
-Screens are organized by feature modules:
-- **Authentication Module**: Login, signup, password recovery
-- **Main Module**: Core application features
-- **Splash Module**: Initial loading screen
-
-### 4. Model-View-Provider (MVP) Pattern
-Each feature follows the MVP pattern:
-- **Models**: Data structures (Product, ShoppingCart, etc.)
-- **Views**: UI screens and widgets
-- **Providers**: Business logic and state management
-
-## Data Flow
-
-### 1. Application Initialization
-```
-main() → Firebase.initializeApp() → ChangeNotifierProvider → MaterialApp → Splash
-```
-
-### 2. State Management Flow
-```
-User Action → Widget → Provider.notifyListeners() → Consumer/Selector → UI Update
-```
-
-### 3. Firebase Integration
-```
-Client → Firebase Auth → Cloud Firestore ↔ Firebase Storage
-```
-
-## Platform-Specific Implementations
-
-### Android
-- **Build Configuration**: android/app/build.gradle
-- **Google Services**: google-services.json
-- **AR Support**: ARCore integration
-- **Minimum SDK**: Defined in build.gradle
-
-### iOS
-- **Build Configuration**: ios/Runner/Info.plist
-- **Firebase Configuration**: GoogleService-Info.plist
-- **AR Support**: ARKit compatibility
-- **Pod Dependencies**: Defined in Podfile
-
-### Web
-- Basic web support with index.html and manifest.json
-
-### Desktop
-- **Linux**: CMake-based build system
-- **macOS**: Xcode project with entitlements
-- **Windows**: CMake with Win32 window management
-
-## Key Features Architecture
-
-### 1. AR Visualization
-- Real-time camera integration
-- 3D model rendering
-- Position and orientation adjustment
-- Real-world surface detection
-
-### 2. E-Commerce Flow
-```
-Product Catalog → Product Details → Add to Cart → Shopping Cart → Checkout
-```
-
-### 3. User Authentication
-```
-Splash → Login/Signup → Main Screen
+ChangeNotifierProvider (main.dart)
         ↓
-  Forgot Password
+   Consumer/Provider.of
+        ↓
+   UI Updates (Reactive)
 ```
 
-### 4. Shopping Cart System
-- **CartProvider**: Centralized cart state management
-- **Product Model**: Item data structure
-- **ShoppingCart Model**: Cart collection management
-- **Real-time Updates**: Provider pattern ensures UI consistency
+## Key Architectural Patterns
 
-## Database Schema (Cloud Firestore)
+### 1. **Component-Based UI Architecture**
+- Reusable widgets in `/components`
+- Consistent design language
+- Separation of concerns
 
-### Collections (Inferred)
-- **users**: User profiles and authentication data
-- **products**: Furniture catalog items
-  - name, description, price
-  - images, 3D models
-  - dimensions, materials
-- **carts**: User shopping carts
-- **orders**: Purchase history
-- **favorites**: User-saved items
+### 2. **Feature-Based Organization**
+- Screens organized by feature modules
+- Co-located related functionality
+- Improved maintainability
 
-## Security Considerations
+### 3. **Firebase Integration Pattern**
+- Centralized Firebase initialization in `main.dart`
+- Platform-specific configuration files
+- Error handling for initialization failures
 
-### Firebase Security
-- Authentication through Firebase Auth
-- Firestore security rules for data access
-- Storage rules for asset protection
+### 4. **Responsive Design**
+- Size configuration utilities
+- Material Design 3 principles
+- Cross-platform compatibility
 
-### Platform Security
-- **iOS**: Proper entitlements configuration
-- **Android**: ProGuard rules for code obfuscation
-- Secure storage of API keys and credentials
+## Security Architecture
 
-## Scalability & Performance
+### Data Security
+- Firebase Authentication for secure user management
+- Firestore security rules for data access control
+- Secure storage of user credentials
 
-### Optimization Strategies
-1. **Lazy Loading**: Load product data on demand
-2. **Image Caching**: Cache product images locally
-3. **State Efficiency**: Provider pattern minimizes unnecessary rebuilds
-4. **AR Optimization**: Efficient 3D model loading and rendering
+### Network Security
+- HTTPS communication for all API calls
+- Firebase SDK encrypted connections
+- Secure payment gateway integration
+
+## AR Integration Architecture
+
+### AR Plugin Integration
+- **AugmentedRealityPlugin**: Third-party plugin for AR capabilities
+- Platform-specific AR engine integration (ARCore for Android)
+- Real-time camera feed processing
+- 3D model rendering and manipulation
+
+### AR Workflow
+1. User selects product from catalog
+2. Product image/model loaded from Firebase Storage
+3. AR view screen initialized with product data
+4. Camera permission requested
+5. AR engine maps environment
+6. 3D furniture model placed in real-world coordinates
+7. User can interact, rotate, and reposition
+
+## Scalability Considerations
+
+### Horizontal Scalability
+- Firebase automatically scales backend services
+- CDN for asset delivery (Firebase Storage)
+- Stateless architecture for web deployment
+
+### Performance Optimization
+- Image caching strategies
+- Lazy loading of product data
+- Efficient state management with Provider
+- Asset compression and optimization
+
+## Cross-Platform Strategy
 
 ### Platform Support
-- Cross-platform deployment (Android, iOS, Web, Desktop)
-- Responsive layouts for various screen sizes
-- Material Design 3 for consistent UI/UX
+- **Mobile**: iOS, Android (primary targets)
+- **Desktop**: Windows, macOS, Linux (secondary)
+- **Web**: Browser-based access (tertiary)
 
-## Build & Deployment
+### Platform-Specific Implementations
+- Native code bridges for platform features
+- Conditional compilation for platform APIs
+- Unified UI with platform-specific adaptations
 
-### Build Configurations
-- **Debug**: Development and testing
-- **Profile**: Performance profiling
-- **Release**: Production deployment
+## Development Workflow
 
-### Platform-Specific Outputs
-- **Android**: APK/AAB
-- **iOS**: IPA
-- **Web**: Static web build
-- **Desktop**: Platform-specific executables
+### Build Configuration
+- Development, staging, and production environments
+- Platform-specific build scripts
+- Firebase project per environment
+
+### Testing Strategy
+- Unit tests for business logic
+- Widget tests for UI components
+- Integration tests for complete flows
+- Platform-specific testing
+
+## Deployment Architecture
+
+### Mobile Deployment
+- Google Play Store (Android)
+- Apple App Store (iOS)
+- Over-the-air updates via app stores
+
+### Backend Deployment
+- Firebase hosting for web version
+- Automated deployments via CI/CD
+- Version management and rollback capabilities
 
 ## Future Architecture Considerations
 
-### Potential Improvements
-1. **Microservices**: Separate backend services for scalability
-2. **GraphQL**: More efficient data fetching
-3. **Offline Support**: Local database (SQLite/Hive) for offline mode
-4. **Analytics**: Firebase Analytics integration
-5. **Push Notifications**: Firebase Cloud Messaging
-6. **CI/CD**: Automated testing and deployment pipelines
-7. **Multi-language**: Internationalization support
-8. **Advanced AR**: Multiple object placement, room scanning
+### Planned Enhancements
+- Microservices for complex business logic
+- GraphQL for efficient data queries
+- Machine learning for product recommendations
+- Advanced AR features (measurement, room scanning)
+- Offline-first architecture with local database
+- Real-time chat support integration
+- Payment gateway integration
+- Multi-language support
 
-## Dependencies Summary
-
-### Core Dependencies
-- flutter (SDK)
-- firebase_core: ^2.24.2
-- cloud_firestore: ^4.13.6
-- firebase_storage: ^11.5.6
-- provider: ^6.1.1
-- augmented_reality_plugin: ^4.0.1
-
-### UI/UX Dependencies
-- google_fonts: ^6.1.0
-- flutter_svg: ^2.0.9
-- animate_do: ^3.1.2
-- flutter_spinkit: ^5.2.0
-
-### Utility Dependencies
-- image_picker: ^1.0.5
-- http: ^1.1.0
-- logger: ^2.0.2+1
-- fluttertoast: ^8.0.7
-- url_launcher: ^6.2.3
-
-## Version Control & Collaboration
-
-### Repository Structure
-- **Owner**: PasanAbeysekara
-- **Repository**: AR-VisionaryExplora
-- **License**: MIT License
-- **Branch Strategy**: main branch for stable releases
-
-## Conclusion
-
-AR-Visionary Explora follows a well-structured, modular architecture that separates concerns effectively. The use of Flutter enables cross-platform development, while Firebase provides a robust backend infrastructure. The Provider pattern ensures efficient state management, and the AR integration creates an innovative shopping experience. The architecture is designed for maintainability, scalability, and future enhancements.
+### Technical Debt Areas
+- Migrate to more robust state management (Riverpod/Bloc)
+- Implement repository pattern for data layer
+- Add comprehensive error handling
+- Implement analytics and crash reporting
+- Add automated testing coverage
